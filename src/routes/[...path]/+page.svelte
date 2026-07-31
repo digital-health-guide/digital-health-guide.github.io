@@ -1,0 +1,84 @@
+<script>
+	import ArticleLayout from '$lib/lily/components/ArticleLayout.svelte';
+	import BreadcrumbNav from '$lib/lily/components/BreadcrumbNav.svelte';
+	import BreadcrumbList from '$lib/lily/components/BreadcrumbList.svelte';
+	import BreadcrumbListItem from '$lib/lily/components/BreadcrumbListItem.svelte';
+	import ContentsNav from '$lib/lily/components/ContentsNav.svelte';
+	import ContentsList from '$lib/lily/components/ContentsList.svelte';
+	import ContentsListItem from '$lib/lily/components/ContentsListItem.svelte';
+	import PaginationNav from '$lib/lily/components/PaginationNav.svelte';
+	import PaginationList from '$lib/lily/components/PaginationList.svelte';
+	import PaginationListItem from '$lib/lily/components/PaginationListItem.svelte';
+	import { REPOSITORY, SITE_NAME, SITE_URL } from '$lib/site.js';
+
+	let { data } = $props();
+
+	const doc = $derived(data.doc);
+	const url = $derived(`${SITE_URL}${doc.route}`);
+	const source = $derived(`${REPOSITORY}/blob/main/${doc.file}`);
+	// Chapters sit one level down; the reference pages hang off the contents.
+	const parent = $derived(doc.file.startsWith('chapters/') ? 'Chapters' : 'Reference');
+</script>
+
+<svelte:head>
+	<title>{doc.title} — {SITE_NAME}</title>
+	<meta name="description" content={doc.summary} />
+	<link rel="canonical" href={url} />
+	<meta property="og:title" content={doc.title} />
+	<meta property="og:description" content={doc.summary} />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content={url} />
+	<meta property="og:image" content={`${SITE_URL}/icon-1200.png`} />
+</svelte:head>
+
+<BreadcrumbNav label="Breadcrumb" class="doc-breadcrumb">
+	<BreadcrumbList>
+		<BreadcrumbListItem><a href="/">Contents</a></BreadcrumbListItem>
+		<BreadcrumbListItem>{parent}</BreadcrumbListItem>
+		<BreadcrumbListItem current>{doc.title}</BreadcrumbListItem>
+	</BreadcrumbList>
+</BreadcrumbNav>
+
+{#if doc.headings.length > 2}
+	<ContentsNav label="On this page" class="doc-contents">
+		<h2>On this page</h2>
+		<ContentsList>
+			{#each doc.headings as heading (heading.id)}
+				<ContentsListItem data-depth={heading.depth}>
+					<a href={`#${heading.id}`}>{heading.text}</a>
+				</ContentsListItem>
+			{/each}
+		</ContentsList>
+	</ContentsNav>
+{/if}
+
+<ArticleLayout label={doc.title} class="prose">
+	{@html doc.html}
+</ArticleLayout>
+
+{#if doc.previous || doc.next}
+	<PaginationNav label="Chapter navigation" class="doc-pagination">
+		<PaginationList>
+			{#if doc.previous}
+				<PaginationListItem>
+					<a href={doc.previous.route} rel="prev">
+						<span class="direction">Previous</span>
+						<span class="title">{doc.previous.title}</span>
+					</a>
+				</PaginationListItem>
+			{/if}
+			{#if doc.next}
+				<PaginationListItem>
+					<a href={doc.next.route} rel="next">
+						<span class="direction">Next</span>
+						<span class="title">{doc.next.title}</span>
+					</a>
+				</PaginationListItem>
+			{/if}
+		</PaginationList>
+	</PaginationNav>
+{/if}
+
+<p class="doc-source">
+	<a href={source}>Edit this page on GitHub</a> — the book is the source of truth; this site renders it.
+</p>
