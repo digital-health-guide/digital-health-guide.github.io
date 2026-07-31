@@ -71,4 +71,8 @@ Themes are plain stylesheets in `static/themes/`; the picker swaps the managed `
 
 `.github/workflows/deploy.yml` builds and deploys on every push to `main`. For the first deployment, set **Settings → Pages → Build and deployment → Source → GitHub Actions** in the repository.
 
-Because this repository is named `digital-health-guide.github.io`, the site is served from the organization root — no base path is needed.
+The setup follows the SvelteKit guidance in [adapter-static → GitHub Pages](https://svelte.dev/docs/kit/adapter-static#GitHub-Pages):
+
+- `fallback: '404.html'` in [`svelte.config.js`](svelte.config.js), so a wrong URL gets this site's own error page instead of GitHub's default 404;
+- an empty [`static/.nojekyll`](static/.nojekyll), so GitHub does not run Jekyll over the build output;
+- `paths.base` left empty. That guidance's `BASE_PATH` step is only for project pages served from `https://<owner>.github.io/<repo>/`. This repository is named after the organization, so the site is served from the root and every link can stay absolute.

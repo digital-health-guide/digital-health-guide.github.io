@@ -14,6 +14,10 @@
 
 	let { data, children } = $props();
 
+	// The 404.html fallback renders without layout data, so there is no book
+	// navigation to show on it.
+	const contents = $derived(data?.contents ?? []);
+
 	const links = [
 		{ href: '/', label: 'Contents' },
 		{ href: '/glossary/', label: 'Glossary' },
@@ -71,26 +75,28 @@
 	</div>
 </Header>
 
-<div class="site-shell">
-	<details class="book-nav" open={wide || undefined}>
-		<summary>Book navigation</summary>
-		<Sidebar label="Book navigation" class="book-sidebar">
-			<SectionNav label="Contents">
-				{#each data.contents as section (section.title)}
-					<details class="book-part" open={partOpen(section)}>
-						<summary>{section.title}</summary>
-						<SectionList>
-							{#each section.items as item (item.route)}
-								<SectionListItem current={item.route === page.url.pathname}>
-									<a href={item.route}>{item.short}</a>
-								</SectionListItem>
-							{/each}
-						</SectionList>
-					</details>
-				{/each}
-			</SectionNav>
-		</Sidebar>
-	</details>
+<div class="site-shell" class:site-shell-wide={contents.length === 0}>
+	{#if contents.length}
+		<details class="book-nav" open={wide || undefined}>
+			<summary>Book navigation</summary>
+			<Sidebar label="Book navigation" class="book-sidebar">
+				<SectionNav label="Contents">
+						{#each contents as section (section.title)}
+							<details class="book-part" open={partOpen(section)}>
+								<summary>{section.title}</summary>
+								<SectionList>
+									{#each section.items as item (item.route)}
+										<SectionListItem current={item.route === page.url.pathname}>
+											<a href={item.route}>{item.short}</a>
+										</SectionListItem>
+									{/each}
+								</SectionList>
+							</details>
+						{/each}
+					</SectionNav>
+				</Sidebar>
+			</details>
+	{/if}
 
 	<main id="main" class="site-main">
 		{@render children()}

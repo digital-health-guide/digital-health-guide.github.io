@@ -124,6 +124,11 @@ body {
 		grid-template-columns: 20rem minmax(0, 1fr);
 		align-items: start;
 	}
+
+	/* The 404 fallback renders without book navigation. */
+	.site-shell-wide {
+		grid-template-columns: minmax(0, 1fr);
+	}
 }
 
 .site-main {
