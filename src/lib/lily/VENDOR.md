@@ -6,6 +6,6 @@ These files are copied verbatim from the Lily Design System (MIT licence) by
 
 - Source: <https://github.com/LilyDesignSystem>
 - Commit: `026b027ab84e091323a80793cd45125f01dd0933`
-- Components: SkipLink, Header, Footer, Sidebar, ArticleLayout, SectionNav, SectionList, SectionListItem, ContentsNav, ContentsList, ContentsListItem, BreadcrumbNav, BreadcrumbList, BreadcrumbListItem, PaginationNav, PaginationList, PaginationListItem
+- Components: SkipLink, Header, Footer, ArticleLayout, ContentsNav, ContentsList, ContentsListItem, BreadcrumbNav, BreadcrumbList, BreadcrumbListItem, PaginationNav, PaginationList, PaginationListItem
 - Helpers: ThemePicker, TextSizePicker
 - Themes: `static/themes/` (9 files)

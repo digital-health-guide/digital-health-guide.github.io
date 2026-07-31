@@ -53,8 +53,9 @@ While rendering, the build:
 - **rewrites Markdown links** — `chapters/01-06-clinical-safety.md` and `../GLOSSARY.md` become site routes, so the same Markdown reads correctly on GitHub and on the web;
 - **links chapter cross-references** — the book's house style "see Chapter 3.4 — Discovery Phases" and "See Chapters 1.9, 3.0" becomes a link to the chapter page (never to the page you are already on, and never inside another link);
 - **adds heading anchors** — every `##` and `###` gets a stable GitHub-style slug id, listed in the "On this page" panel;
-- **builds the navigation from the book's own table of contents** — the sidebar parts and chapter order are parsed from `README.md`, so the site and the README cannot drift apart;
 - **derives prev/next** from chapter file order, and writes `sitemap.xml`.
+
+There is no sidebar. Navigation is the book's own table of contents on the home page — rendered from `README.md`, so the site and the README cannot drift apart — plus the header links, the breadcrumb, and prev/next at the foot of each chapter.
 
 If a link in the book points at a file that does not exist, the build fails rather than publishing a broken page.
 

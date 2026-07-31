@@ -4,7 +4,7 @@
 // modules, so neither the Markdown nor the renderer reaches the browser.
 
 import { renderMarkdown } from './markdown.js';
-import { contentPath, routeFor } from './paths.js';
+import { routeFor } from './paths.js';
 
 const raw = import.meta.glob('/content/**/*.md', {
 	eager: true,
@@ -42,49 +42,6 @@ const routeByNumber = new Map(chapters.filter((c) => c.number).map((c) => [c.num
 
 /** Resolve a chapter number such as "3.4" to its route, for cross-references. */
 export const chapterHref = (number) => routeByNumber.get(number) ?? null;
-
-/**
- * The book's own table of contents, parsed from README.md so the site
- * navigation and the repository README can never drift apart.
- *
- * @returns {Array<{title: string, items: Array<{label: string, short: string, route: string}>}>}
- */
-export function contents() {
-	const readme = sources['README.md'] ?? '';
-	const sections = [];
-	let current = null;
-	let inContents = false;
-
-	for (const line of readme.split('\n')) {
-		if (/^##\s+Table of contents/i.test(line)) {
-			inContents = true;
-			continue;
-		}
-		if (!inContents) continue;
-		if (/^##(?!#)\s/.test(line)) break; // the next h2 ends the table of contents
-
-		const heading = /^###\s+(.+)$/.exec(line);
-		if (heading) {
-			current = { title: heading[1].trim(), items: [] };
-			sections.push(current);
-			continue;
-		}
-
-		const item = /^[-*]\s+\[([^\]]+)\]\(([^)\s]+)\)/.exec(line);
-		if (!item || !current) continue;
-		const route = routeFor(contentPath(item[2], 'README.md'));
-		if (!route) continue;
-		const label = item[1].trim();
-		const chapter = chapters.find((c) => c.route === route);
-		current.items.push({
-			label,
-			short: chapter?.number ? `${chapter.number} ${chapter.name}` : label,
-			route
-		});
-	}
-
-	return sections;
-}
 
 /** Every route this site publishes, in prerender order. */
 export function routes() {

@@ -3,20 +3,12 @@
 	import SkipLink from '$lib/lily/components/SkipLink.svelte';
 	import Header from '$lib/lily/components/Header.svelte';
 	import Footer from '$lib/lily/components/Footer.svelte';
-	import Sidebar from '$lib/lily/components/Sidebar.svelte';
-	import SectionNav from '$lib/lily/components/SectionNav.svelte';
-	import SectionList from '$lib/lily/components/SectionList.svelte';
-	import SectionListItem from '$lib/lily/components/SectionListItem.svelte';
 	import ThemePicker from '$lib/lily/helpers/ThemePicker.svelte';
 	import TextSizePicker from '$lib/lily/helpers/TextSizePicker.svelte';
 	import { REPOSITORY, THEMES, THEME_LABELS } from '$lib/site.js';
 	import '../styles/site.css';
 
-	let { data, children } = $props();
-
-	// The 404.html fallback renders without layout data, so there is no book
-	// navigation to show on it.
-	const contents = $derived(data?.contents ?? []);
+	let { children } = $props();
 
 	const links = [
 		{ href: '/', label: 'Contents' },
@@ -27,20 +19,6 @@
 	];
 
 	const current = (href) => (page.url.pathname === href ? 'page' : undefined);
-
-	// The book navigation is a disclosure on small screens and always open on
-	// wide ones. Tracking the media query keeps one copy of the markup.
-	let wide = $state(false);
-	$effect(() => {
-		const query = window.matchMedia('(min-width: 64rem)');
-		const sync = () => (wide = query.matches);
-		sync();
-		query.addEventListener('change', sync);
-		return () => query.removeEventListener('change', sync);
-	});
-
-	const partOpen = (section) =>
-		wide || section.items.some((item) => item.route === page.url.pathname);
 </script>
 
 <SkipLink href="#main" label="Skip to main content" />
@@ -75,33 +53,9 @@
 	</div>
 </Header>
 
-<div class="site-shell" class:site-shell-wide={contents.length === 0}>
-	{#if contents.length}
-		<details class="book-nav" open={wide || undefined}>
-			<summary>Book navigation</summary>
-			<Sidebar label="Book navigation" class="book-sidebar">
-				<SectionNav label="Contents">
-						{#each contents as section (section.title)}
-							<details class="book-part" open={partOpen(section)}>
-								<summary>{section.title}</summary>
-								<SectionList>
-									{#each section.items as item (item.route)}
-										<SectionListItem current={item.route === page.url.pathname}>
-											<a href={item.route}>{item.short}</a>
-										</SectionListItem>
-									{/each}
-								</SectionList>
-							</details>
-						{/each}
-					</SectionNav>
-				</Sidebar>
-			</details>
-	{/if}
-
-	<main id="main" class="site-main">
-		{@render children()}
-	</main>
-</div>
+<main id="main" class="site-main">
+	{@render children()}
+</main>
 
 <Footer label="Site footer" class="site-footer">
 	<div class="site-footer-inner">
