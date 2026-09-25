@@ -8,10 +8,10 @@
 
 /** @type {{ slug: string, label: string, hreflang: string }[]} */
 export const LOCALES = [
-	{ slug: 'en-gb', label: 'English (UK)', hreflang: 'en-GB' },
-	{ slug: 'en-us', label: 'English (US)', hreflang: 'en-US' },
-	{ slug: 'en-gb-oxendict', label: 'English (UK, Oxford spelling)', hreflang: 'en-GB-oxendict' },
-	{ slug: 'en-001', label: 'English (International)', hreflang: 'en-001' },
+	{ slug: 'en-001', label: 'English', hreflang: 'en-001' },
+	{ slug: 'en-gb', label: 'English - Great Britain', hreflang: 'en-GB' },
+	{ slug: 'en-us', label: 'English - United States', hreflang: 'en-US' },
+	{ slug: 'en-gb-oxendict', label: 'English - Great Britain - Oxford', hreflang: 'en-GB-oxendict' },
 	{ slug: 'cy-gb', label: 'Cymraeg', hreflang: 'cy-GB' }
 ];
 
