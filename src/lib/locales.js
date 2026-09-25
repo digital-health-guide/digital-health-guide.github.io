@@ -7,12 +7,15 @@
 // working. Every other locale is served under `/<slug>/`.
 
 /** @type {{ slug: string, label: string, hreflang: string }[]} */
+// Sorted alphabetically by slug (cy-gb, en-001, en-gb, en-gb-oxendict, en-us) —
+// not by label, so "English - Great Britain" sorts before
+// "English - Great Britain - Oxford" rather than by the language name.
 export const LOCALES = [
+	{ slug: 'cy-gb', label: 'Cymraeg', hreflang: 'cy-GB' },
 	{ slug: 'en-001', label: 'English', hreflang: 'en-001' },
 	{ slug: 'en-gb', label: 'English - Great Britain', hreflang: 'en-GB' },
-	{ slug: 'en-us', label: 'English - United States', hreflang: 'en-US' },
 	{ slug: 'en-gb-oxendict', label: 'English - Great Britain - Oxford', hreflang: 'en-GB-oxendict' },
-	{ slug: 'cy-gb', label: 'Cymraeg', hreflang: 'cy-GB' }
+	{ slug: 'en-us', label: 'English - United States', hreflang: 'en-US' }
 ];
 
 export const DEFAULT_LOCALE = 'en-gb';
