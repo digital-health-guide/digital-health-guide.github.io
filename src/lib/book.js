@@ -115,6 +115,7 @@ export function document(route) {
 	const rendered = renderMarkdown(sources[entry.file], {
 		file: entry.file,
 		route,
+		locale,
 		chapterHref: chapterHrefFor(locale)
 	});
 	const chapters = chaptersByLocale.get(locale) ?? [];

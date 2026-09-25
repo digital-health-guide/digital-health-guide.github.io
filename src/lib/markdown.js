@@ -1,6 +1,7 @@
 import { Marked } from 'marked';
 import GithubSlugger from 'github-slugger';
 import { rewriteHref } from './paths.js';
+import { stringsFor } from './strings.js';
 
 const escapeAttribute = (value) =>
 	value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
@@ -60,12 +61,13 @@ function chapterReferences(chapterHref) {
  * @param {(number: string) => string | null} options.chapterHref chapter number to route
  * @returns {{ html: string, title: string, headings: Array<{depth: number, id: string, text: string}>, summary: string }}
  */
-export function renderMarkdown(markdown, { file, route, chapterHref = () => null }) {
+export function renderMarkdown(markdown, { file, route, locale, chapterHref = () => null }) {
 	// A chapter that mentions its own number links nowhere useful.
 	const href = (number) => {
 		const target = chapterHref(number);
 		return target && target !== route ? target : null;
 	};
+	const t = stringsFor(locale);
 
 	const slugger = new GithubSlugger();
 	const headings = [];
@@ -91,7 +93,7 @@ export function renderMarkdown(markdown, { file, route, chapterHref = () => null
 				const anchor =
 					depth === 1
 						? ''
-						: `<a class="heading-anchor" href="#${id}" aria-label="Link to “${escapeAttribute(text)}”">#</a>`;
+						: `<a class="heading-anchor" href="#${id}" aria-label="${t.headingAnchorPrefix} “${escapeAttribute(text)}”">#</a>`;
 				return `<h${depth} id="${id}">${html}${anchor}</h${depth}>\n`;
 			},
 			link({ href, title: linkTitle, tokens }) {

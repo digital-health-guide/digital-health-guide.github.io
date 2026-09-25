@@ -12,6 +12,7 @@
 	import AlternateLinks from '$lib/components/AlternateLinks.svelte';
 	import { REPOSITORY, SITE_NAME, SITE_URL } from '$lib/site.js';
 	import { localePrefix, bookFilePath } from '$lib/locales.js';
+	import { stringsFor } from '$lib/strings.js';
 
 	/** @type {{ doc: import('$lib/book.js').document, alternates: { locale: string, route: string }[] }} */
 	let { doc, alternates } = $props();
@@ -19,8 +20,9 @@
 	const url = $derived(`${SITE_URL}${doc.route}`);
 	const source = $derived(`${REPOSITORY}/blob/main/${bookFilePath(doc.file)}`);
 	const home = $derived(`${localePrefix(doc.locale)}/`);
+	const t = $derived(stringsFor(doc.locale));
 	// Chapters sit one level down; the reference pages hang off the contents.
-	const parent = $derived(doc.file.includes('/chapters/') ? 'Chapters' : 'Reference');
+	const parent = $derived(doc.file.includes('/chapters/') ? t.breadcrumbChapters : t.breadcrumbReference);
 </script>
 
 <svelte:head>
@@ -35,17 +37,17 @@
 	<meta property="og:image" content={`${SITE_URL}/icon-1200.png`} />
 </svelte:head>
 
-<BreadcrumbNav label="Breadcrumb" class="doc-breadcrumb">
+<BreadcrumbNav label={t.breadcrumb} class="doc-breadcrumb">
 	<BreadcrumbList>
-		<BreadcrumbListItem><a href={home}>Contents</a></BreadcrumbListItem>
+		<BreadcrumbListItem><a href={home}>{t.navContents}</a></BreadcrumbListItem>
 		<BreadcrumbListItem>{parent}</BreadcrumbListItem>
 		<BreadcrumbListItem current>{doc.title}</BreadcrumbListItem>
 	</BreadcrumbList>
 </BreadcrumbNav>
 
 {#if doc.headings.length > 2}
-	<ContentsNav label="On this page" class="doc-contents">
-		<h2>On this page</h2>
+	<ContentsNav label={t.onThisPage} class="doc-contents">
+		<h2>{t.onThisPage}</h2>
 		<ContentsList>
 			{#each doc.headings as heading (heading.id)}
 				<ContentsListItem data-depth={heading.depth}>
@@ -61,12 +63,12 @@
 </ArticleLayout>
 
 {#if doc.previous || doc.next}
-	<PaginationNav label="Chapter navigation" class="doc-pagination">
+	<PaginationNav label={t.chapterNavigation} class="doc-pagination">
 		<PaginationList>
 			{#if doc.previous}
 				<PaginationListItem>
 					<a href={doc.previous.route} rel="prev">
-						<span class="direction">Previous</span>
+						<span class="direction">{t.previous}</span>
 						<span class="title">{doc.previous.title}</span>
 					</a>
 				</PaginationListItem>
@@ -74,7 +76,7 @@
 			{#if doc.next}
 				<PaginationListItem>
 					<a href={doc.next.route} rel="next">
-						<span class="direction">Next</span>
+						<span class="direction">{t.next}</span>
 						<span class="title">{doc.next.title}</span>
 					</a>
 				</PaginationListItem>
@@ -84,5 +86,5 @@
 {/if}
 
 <p class="doc-source">
-	<a href={source}>Edit this page on GitHub</a> — the book is the source of truth; this site renders it.
+	<a href={source}>{t.editOnGitHub}</a> — {t.sourceOfTruth}
 </p>

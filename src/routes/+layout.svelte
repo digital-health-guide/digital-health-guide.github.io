@@ -7,21 +7,28 @@
 	import PickerBar from '$lib/lily/helpers/picker-bar/index.ts';
 	import { REPOSITORY, THEMES, THEME_LABELS } from '$lib/site.js';
 	import { LOCALES, LOCALE_LABELS, DEFAULT_LOCALE, localePrefix } from '$lib/locales.js';
+	import { stringsFor } from '$lib/strings.js';
 	import '../styles/site.css';
 
 	let { children } = $props();
 
-	const links = [
-		{ href: '/', label: 'Contents' },
-		{ href: '/glossary/', label: 'Glossary' },
-		{ href: '/subject-index/', label: 'Index' },
-		{ href: '/style-guide/', label: 'Style guide' },
-		{ href: '/spec/', label: 'Specification' }
-	];
-
-	const current = (href) => (page.url.pathname === href ? 'page' : undefined);
 	const currentLocale = $derived(page.data?.doc?.locale ?? DEFAULT_LOCALE);
 	const alternates = $derived(page.data?.alternates ?? []);
+	const t = $derived(stringsFor(currentLocale));
+	const home = $derived(`${localePrefix(currentLocale)}/`);
+
+	// "Contents" is the current locale's own home page; the reference pages
+	// (glossary, index, style guide, spec) are not translated, so they have
+	// exactly one route shared by every locale.
+	const links = $derived([
+		{ href: home, label: t.navContents },
+		{ href: '/glossary/', label: t.navGlossary },
+		{ href: '/subject-index/', label: t.navIndex },
+		{ href: '/style-guide/', label: t.navStyleGuide },
+		{ href: '/spec/', label: t.navSpecification }
+	]);
+
+	const current = (href) => (page.url.pathname === href ? 'page' : undefined);
 
 	/** Navigate to the equivalent page in the newly-chosen locale. */
 	function handleLocaleChange(locale) {
@@ -31,23 +38,28 @@
 	}
 </script>
 
-<SkipLink href="#main" label="Skip to main content" />
+<SkipLink href="#main" label={t.skipToMain} />
 
-<Header label="Site header" class="site-header">
+<Header label={t.siteHeader} class="site-header">
 	<div class="site-header-inner">
-		<a class="site-brand" href={`${localePrefix(currentLocale)}/`}>
+		<a class="site-brand" href={home}>
 			<img src="/icon-600.png" alt="" aria-hidden="true" width="32" height="32" />
 			<span>Digital Health Guide</span>
 		</a>
-		<nav class="site-nav" aria-label="Main">
+		<nav class="site-nav" aria-label={t.mainNav}>
 			{#each links as link (link.href)}
 				<a href={link.href} aria-current={current(link.href)}>{link.label}</a>
 			{/each}
-			<a href={REPOSITORY}>GitHub</a>
+			<a href={REPOSITORY}>{t.navGitHub}</a>
 		</nav>
 		<div class="site-tools">
 			<PickerBar
-				labels={{ theme: 'Theme', locale: 'Language', textSize: 'Text size', share: 'Share' }}
+				labels={{
+					theme: t.pickerTheme,
+					locale: t.pickerLocale,
+					textSize: t.pickerTextSize,
+					share: t.pickerShare
+				}}
 				themesUrl="/themes/"
 				themes={THEMES}
 				themeProps={{ themeLabels: THEME_LABELS, storageKey: 'digital-health-guide-theme', detectFromSystem: true }}
@@ -59,7 +71,7 @@
 				}}
 				sizes={['small', 'medium', 'large', 'x-large']}
 				textSizeProps={{ storageKey: 'digital-health-guide-text-size', defaultValue: 'medium' }}
-				shareProps={{ copyLabel: 'Copy link', copiedLabel: 'Copied' }}
+				shareProps={{ copyLabel: t.pickerShareCopyLink, copiedLabel: t.pickerShareCopied }}
 			/>
 		</div>
 	</div>
@@ -69,18 +81,17 @@
 	{@render children()}
 </main>
 
-<Footer label="Site footer" class="site-footer">
+<Footer label={t.siteFooter} class="site-footer">
 	<div class="site-footer-inner">
 		<p>
-			<em>Digital Health Guide</em> — a practical handbook of best practices for delivering digital
-			services in health and social care organizations. Written by Joel Parker Henderson. Built with the
-			<a href="https://github.com/LilyDesignSystem">Lily Design System</a>.
+			<em>Digital Health Guide</em> — {t.footerDescription}
+			<a href="https://github.com/LilyDesignSystem">{t.footerLilyLink}</a>.
 		</p>
 		<div class="site-footer-links">
-			<a href={REPOSITORY}>GitHub</a>
-			<a href="https://gitlab.com/digital-health-guide/digital-health-guide">GitLab</a>
-			<a href="https://codeberg.org/digital-health-guide/digital-health-guide">Codeberg</a>
-			<a href="/spec/">Specification</a>
+			<a href={REPOSITORY}>{t.footerGitHub}</a>
+			<a href="https://gitlab.com/digital-health-guide/digital-health-guide">{t.footerGitLab}</a>
+			<a href="https://codeberg.org/digital-health-guide/digital-health-guide">{t.footerCodeberg}</a>
+			<a href="/spec/">{t.footerSpecification}</a>
 		</div>
 	</div>
 </Footer>
