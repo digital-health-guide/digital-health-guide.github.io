@@ -70,6 +70,11 @@ export function renderMarkdown(markdown, { file, route, chapterHref = () => null
 	const slugger = new GithubSlugger();
 	const headings = [];
 	let title = '';
+	// The book's own one-line tagline: the first H3, immediately after the H1
+	// on the home page of every locale ("### A practical handbook of…" /
+	// "### Llawlyfr ymarferol o…"). Used for a short <title>, since the H1 is
+	// just the brand name "Digital Health Guide" in every locale.
+	let subtitle = '';
 
 	const marked = new Marked({ gfm: true });
 	marked.use({
@@ -80,6 +85,7 @@ export function renderMarkdown(markdown, { file, route, chapterHref = () => null
 				const text = plainText(html);
 				const id = slugger.slug(text);
 				if (depth === 1 && !title) title = text;
+				if (depth === 3 && !subtitle) subtitle = text;
 				if (depth === 2 || depth === 3) headings.push({ depth, id, text });
 				// The page title needs no self-anchor.
 				const anchor =
@@ -103,7 +109,7 @@ export function renderMarkdown(markdown, { file, route, chapterHref = () => null
 	});
 
 	const html = marked.parse(markdown);
-	return { html, title, headings, summary: summarize(markdown) };
+	return { html, title, subtitle, headings, summary: summarize(markdown) };
 }
 
 /** A one-line description for <meta name="description">. */

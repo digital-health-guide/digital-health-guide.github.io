@@ -1,11 +1,12 @@
 <script>
 	import { page } from '$app/state';
+	import { goto } from '$app/navigation';
 	import SkipLink from '$lib/lily/components/SkipLink.svelte';
 	import Header from '$lib/lily/components/Header.svelte';
 	import Footer from '$lib/lily/components/Footer.svelte';
-	import ThemePicker from '$lib/lily/helpers/ThemePicker.svelte';
-	import TextSizePicker from '$lib/lily/helpers/TextSizePicker.svelte';
+	import PickerBar from '$lib/lily/helpers/picker-bar/index.ts';
 	import { REPOSITORY, THEMES, THEME_LABELS } from '$lib/site.js';
+	import { LOCALES, LOCALE_LABELS, DEFAULT_LOCALE, localePrefix } from '$lib/locales.js';
 	import '../styles/site.css';
 
 	let { children } = $props();
@@ -19,13 +20,22 @@
 	];
 
 	const current = (href) => (page.url.pathname === href ? 'page' : undefined);
+	const currentLocale = $derived(page.data?.doc?.locale ?? DEFAULT_LOCALE);
+	const alternates = $derived(page.data?.alternates ?? []);
+
+	/** Navigate to the equivalent page in the newly-chosen locale. */
+	function handleLocaleChange(locale) {
+		if (locale === currentLocale) return;
+		const alternate = alternates.find((a) => a.locale === locale);
+		goto(alternate?.route ?? `${localePrefix(locale)}/`);
+	}
 </script>
 
 <SkipLink href="#main" label="Skip to main content" />
 
 <Header label="Site header" class="site-header">
 	<div class="site-header-inner">
-		<a class="site-brand" href="/">
+		<a class="site-brand" href={`${localePrefix(currentLocale)}/`}>
 			<img src="/icon-600.png" alt="" aria-hidden="true" width="32" height="32" />
 			<span>Digital Health Guide</span>
 		</a>
@@ -36,18 +46,20 @@
 			<a href={REPOSITORY}>GitHub</a>
 		</nav>
 		<div class="site-tools">
-			<TextSizePicker
-				label="Text size"
-				sizes={['small', 'medium', 'large', 'x-large']}
-				storageKey="digital-health-guide-text-size"
-			/>
-			<ThemePicker
-				label="Theme"
+			<PickerBar
+				labels={{ theme: 'Theme', locale: 'Language', textSize: 'Text size', share: 'Share' }}
 				themesUrl="/themes/"
 				themes={THEMES}
-				themeLabels={THEME_LABELS}
-				storageKey="digital-health-guide-theme"
-				detectFromSystem
+				themeProps={{ themeLabels: THEME_LABELS, storageKey: 'digital-health-guide-theme', detectFromSystem: true }}
+				locales={LOCALES.map((l) => l.slug)}
+				localeProps={{
+					localeLabels: LOCALE_LABELS,
+					value: currentLocale,
+					onChange: handleLocaleChange
+				}}
+				sizes={['small', 'medium', 'large', 'x-large']}
+				textSizeProps={{ storageKey: 'digital-health-guide-text-size', defaultValue: 'medium' }}
+				shareProps={{ copyLabel: 'Copy link', copiedLabel: 'Copied' }}
 			/>
 		</div>
 	</div>

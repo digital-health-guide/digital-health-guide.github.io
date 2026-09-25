@@ -2,8 +2,16 @@
 	import { page } from '$app/state';
 	import ArticleLayout from '$lib/lily/components/ArticleLayout.svelte';
 	import { SITE_NAME } from '$lib/site.js';
+	import { PREFIXED_LOCALE_SLUGS } from '$lib/locales.js';
 
 	const heading = $derived(page.status === 404 ? 'Page not found' : 'Something went wrong');
+	// The static 404.html is shared by every unmatched URL; once it hydrates,
+	// page.url reflects the real browser location, so home can still point at
+	// the reader's own locale rather than always the default.
+	const home = $derived.by(() => {
+		const first = page.url.pathname.split('/')[1] ?? '';
+		return PREFIXED_LOCALE_SLUGS.has(first) ? `/${first}/` : '/';
+	});
 </script>
 
 <svelte:head>
@@ -21,7 +29,7 @@
 		<p>{page.error?.message ?? 'The page could not be loaded.'}</p>
 	{/if}
 	<p>
-		Try the <a href="/">table of contents</a>, the <a href="/glossary/">glossary</a>, or the
+		Try the <a href={home}>table of contents</a>, the <a href="/glossary/">glossary</a>, or the
 		<a href="/subject-index/">index</a>.
 	</p>
 </ArticleLayout>

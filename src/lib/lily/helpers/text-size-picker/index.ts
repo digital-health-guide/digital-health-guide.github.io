@@ -1,0 +1,6 @@
+export {
+    default,
+    default as TextSizePicker,
+    sizeName,
+} from "./TextSizePicker.svelte";
+export type { Props, ChildArgs } from "./TextSizePicker.svelte";

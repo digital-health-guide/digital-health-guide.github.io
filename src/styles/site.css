@@ -2,7 +2,8 @@
  *
  * The Lily theme stylesheet (static/themes/*.css) supplies the design tokens
  * and styles every Lily class hook: .header, .footer, .sidebar, .section-nav,
- * .contents-nav, .breadcrumb-nav, .pagination-nav, .theme-picker and friends.
+ * .contents-nav, .breadcrumb-nav, .pagination-nav, .theme-picker,
+ * .locale-picker, .text-size-picker, .share-picker and friends.
  * This file adds only what a book needs on top: page layout and prose. Colours
  * and radii come from tokens, so every theme keeps working.
  */
@@ -103,6 +104,15 @@ body {
 }
 
 .site-tools {
+	display: flex;
+	align-items: center;
+	gap: var(--lily-space-sm, 0.75rem);
+}
+
+/* PickerBar renders no layout CSS of its own beyond this class hook — each
+   wrapped picker (.theme-picker, .locale-picker, .text-size-picker,
+   .share-picker) is styled by the active Lily theme. */
+.picker-bar {
 	display: flex;
 	align-items: center;
 	gap: var(--lily-space-sm, 0.75rem);

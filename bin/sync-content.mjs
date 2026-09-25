@@ -8,24 +8,28 @@ import { cp, mkdir, rm, readdir, stat } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { LOCALES } from '../src/lib/locales.js';
 
 const siteRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const book = resolve(process.env.BOOK ?? join(siteRoot, '..', 'digital-health-guide'));
+const localesDir = join(book, 'locales');
 
-if (!existsSync(join(book, 'README.md'))) {
-	console.error(`No book found at ${book}. Set BOOK=/path/to/digital-health-guide.`);
+if (!existsSync(join(localesDir, 'en-gb', 'index.md'))) {
+	console.error(
+		`No book found at ${book} (expected locales/en-gb/index.md). Set BOOK=/path/to/digital-health-guide.`
+	);
 	process.exit(1);
 }
-
-// Files copied verbatim into content/. Everything here becomes a page or a link target.
-const files = ['README.md', 'GLOSSARY.md', 'INDEX.md', 'STYLE_GUIDE.md', 'CITATION.cff'];
-const dirs = ['chapters', 'spec'];
 
 const contentDir = join(siteRoot, 'content');
 await rm(contentDir, { recursive: true, force: true });
 await mkdir(contentDir, { recursive: true });
 
 let count = 0;
+
+// Reference material lives once, in English, shared by every locale.
+const files = ['GLOSSARY.md', 'INDEX.md', 'STYLE_GUIDE.md', 'CITATION.cff'];
+const dirs = ['spec'];
 
 for (const file of files) {
 	const from = join(book, file);
@@ -51,6 +55,33 @@ for (const dir of dirs) {
 	}
 }
 
+// Each locale: its own index.md (table of contents) and chapters/<slug>/index.md.
+for (const { slug } of LOCALES) {
+	const localeDir = join(localesDir, slug);
+	if (!existsSync(join(localeDir, 'index.md'))) {
+		console.warn(`skip (missing): locales/${slug}/index.md`);
+		continue;
+	}
+
+	await mkdir(join(contentDir, slug), { recursive: true });
+	await cp(join(localeDir, 'index.md'), join(contentDir, slug, 'index.md'));
+	count += 1;
+
+	const chaptersFrom = join(localeDir, 'chapters');
+	if (!existsSync(chaptersFrom)) {
+		console.warn(`skip (missing): locales/${slug}/chapters/`);
+		continue;
+	}
+	for (const entry of await readdir(chaptersFrom, { withFileTypes: true })) {
+		if (!entry.isDirectory()) continue;
+		const from = join(chaptersFrom, entry.name, 'index.md');
+		if (!existsSync(from)) continue;
+		await mkdir(join(contentDir, slug, 'chapters', entry.name), { recursive: true });
+		await cp(from, join(contentDir, slug, 'chapters', entry.name, 'index.md'));
+		count += 1;
+	}
+}
+
 // The icon doubles as the favicon and the social-card image.
 const icons = [
 	['assets/images/icon@600x600.png', 'icon-600.png'],
@@ -66,5 +97,5 @@ for (const [from, to] of icons) {
 	count += 1;
 }
 
-const { size } = await stat(join(contentDir, 'README.md'));
-console.log(`Synced ${count} files from ${book} (README.md ${size} bytes).`);
+const { size } = await stat(join(contentDir, 'en-gb', 'index.md'));
+console.log(`Synced ${count} files from ${book} (en-gb/index.md ${size} bytes).`);

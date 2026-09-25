@@ -1,15 +1,17 @@
 import { error } from '@sveltejs/kit';
-import { document, routes } from '$lib/book.js';
+import { routes } from '$lib/book.js';
+import { loadDoc } from '$lib/pageData.js';
+import { DEFAULT_LOCALE } from '$lib/locales.js';
 
-/** Prerender every document the book publishes, without relying on crawling. */
+/** Prerender every document the default locale publishes, without relying on crawling. */
 export function entries() {
-	return routes().map(({ route }) => ({ path: route.replace(/^\/|\/$/g, '') }));
+	return routes(DEFAULT_LOCALE).map(({ route }) => ({ path: route.replace(/^\/|\/$/g, '') }));
 }
 
 export function load({ params }) {
 	// A rest parameter keeps the trailing slash that trailingSlash: 'always' adds.
 	const route = `/${params.path.replace(/\/+$/, '')}/`;
-	const doc = document(route);
-	if (!doc) error(404, `No page at ${route}`);
-	return { doc };
+	const data = loadDoc(route);
+	if (!data) error(404, `No page at ${route}`);
+	return data;
 }

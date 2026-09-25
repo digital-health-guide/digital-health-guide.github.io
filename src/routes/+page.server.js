@@ -1,8 +1,8 @@
 import { error } from '@sveltejs/kit';
-import { document } from '$lib/book.js';
+import { loadDoc } from '$lib/pageData.js';
 
 export function load() {
-	const doc = document('/');
-	if (!doc) error(404, 'The book README is missing from content/.');
-	return { doc };
+	const data = loadDoc('/');
+	if (!data) error(404, 'The en-gb book index is missing from content/.');
+	return data;
 }
