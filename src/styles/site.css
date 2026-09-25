@@ -118,6 +118,27 @@ body {
 	gap: var(--lily-space-sm, 0.75rem);
 }
 
+/* SharePicker (unlike the other three pickers) always renders a trailing
+   <p class="share-picker-status" aria-live="polite">, even when empty, for
+   announcing copy/share results to screen readers. Left in normal flow, an
+   empty <p> still takes up a line-height of space, making the .share-picker
+   wrapper ~4px taller than its siblings; centered by .picker-bar's
+   align-items: center, that extra height shifts the whole picker (button
+   and icon included) a couple of pixels above the others. Take it out of
+   layout without taking it out of the accessibility tree — aria-live
+   announcements do not depend on visual position. */
+.share-picker-status {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
 /* -------------------------------------------------------------- Layout ---- */
 
 /* One centred reading column: the book's own table of contents on the home
