@@ -97,7 +97,7 @@ The chapters are ordered but self-contained; each ends with a maturity model and
 - [Chapter 8.0 — Phasing in Innovation](chapters/08-00-phasing-innovation/)
 - [Chapter 8.1 — Change Management](chapters/08-01-change-management/)
 - [Chapter 8.2 — Communications & Engagement](chapters/08-02-communications-engagement/)
-- [Chapter 8.3 — Behavioural Science & Adoption](chapters/08-03-behavioural-science-adoption/)
+- [Chapter 8.3 — Behavioral Science & Adoption](chapters/08-03-behavioural-science-adoption/)
 - [Chapter 8.4 — AI & Emerging Technology Governance](chapters/08-04-ai-emerging-technology/)
 - [Chapter 8.5 — Sustainability & Net Zero](chapters/08-05-sustainability-net-zero/)
 - [Chapter 8.6 — Research & Real-World Evaluation](chapters/08-06-research-real-world-evaluation/)

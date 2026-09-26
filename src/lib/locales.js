@@ -7,15 +7,19 @@
 // working. Every other locale is served under `/<slug>/`.
 
 /** @type {{ slug: string, label: string, hreflang: string }[]} */
-// Sorted alphabetically by slug (cy-gb, en-001, en-gb, en-gb-oxendict, en-us) —
-// not by label, so "English - Great Britain" sorts before
-// "English - Great Britain - Oxford" rather than by the language name.
+// Sorted alphabetically by slug (cy-001, en-001, en-gb, en-gb-oxendict,
+// en-us, es-001, hi-in, zh-cn) — not by label, so "English - Great Britain"
+// sorts before "English - Great Britain - Oxford" rather than by the
+// language name.
 export const LOCALES = [
-	{ slug: 'cy-gb', label: 'Cymraeg', hreflang: 'cy-GB' },
+	{ slug: 'cy-001', label: 'Cymraeg', hreflang: 'cy-001' },
 	{ slug: 'en-001', label: 'English', hreflang: 'en-001' },
 	{ slug: 'en-gb', label: 'English - Great Britain', hreflang: 'en-GB' },
 	{ slug: 'en-gb-oxendict', label: 'English - Great Britain - Oxford', hreflang: 'en-GB-oxendict' },
-	{ slug: 'en-us', label: 'English - United States', hreflang: 'en-US' }
+	{ slug: 'en-us', label: 'English - United States', hreflang: 'en-US' },
+	{ slug: 'es-001', label: 'Español', hreflang: 'es-001' },
+	{ slug: 'hi-in', label: 'हिन्दी', hreflang: 'hi-IN' },
+	{ slug: 'zh-cn', label: '中文（中国）', hreflang: 'zh-CN' }
 ];
 
 export const DEFAULT_LOCALE = 'en-gb';

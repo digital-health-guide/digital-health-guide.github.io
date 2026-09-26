@@ -4,7 +4,7 @@ The website for **[Digital Health Guide](https://github.com/digital-health-guide
 
 Published at <https://digital-health-guide.github.io/>.
 
-The book is the source of truth; this repository only renders it. Every page here comes from the Markdown in the book repository's [`locales/`](https://github.com/digital-health-guide/digital-health-guide/tree/main/locales), vendored into `content/` and built into a static site — one build, five languages/dialects.
+The book is the source of truth; this repository only renders it. Every page here comes from the Markdown in the book repository's [`locales/`](https://github.com/digital-health-guide/digital-health-guide/tree/main/locales), vendored into `content/` and built into a static site — one build, eight languages/dialects.
 
 ## Toolchain
 
@@ -38,7 +38,7 @@ The vendored Lily files and their upstream commit are recorded in [`src/lib/lily
 
 ## Locales
 
-The book publishes five locales from [`locales/`](https://github.com/digital-health-guide/digital-health-guide/tree/main/locales): **en-gb** (British English, the book's source of truth — served unprefixed, at `/`), **en-us** (American spelling), **en-gb-oxendict** (Oxford spelling), **en-001** (international English), and **cy-gb** (Cymraeg/Welsh, a full translation). Every locale but en-gb is served under its own `/<locale>/` prefix, so the site's existing unprefixed URLs (`/chapters/…`, `/glossary/`, …) keep working unchanged.
+The book publishes eight locales from [`locales/`](https://github.com/digital-health-guide/digital-health-guide/tree/main/locales): **en-gb** (British English, the book's source of truth — served unprefixed, at `/`), **en-us** (American spelling), **en-gb-oxendict** (Oxford spelling), **en-001** (international English), **cy-001** (Cymraeg/Welsh, a full translation), **es-001** (Español, a full translation), **zh-cn** (中文, Simplified Chinese, a full translation), and **hi-in** (हिन्दी, Hindi, a full translation). Every locale but en-gb is served under its own `/<locale>/` prefix, so the site's existing unprefixed URLs (`/chapters/…`, `/glossary/`, …) keep working unchanged.
 
 The header's language picker switches locale in place: from any chapter, it lands on the *same* chapter in the new locale, not that locale's home page (see `equivalentRoute` in [`src/lib/book.js`](src/lib/book.js)). Reference material — the glossary, subject index, style guide, and spec — is not translated, so it has exactly one route shared by every locale; the picker leaves it alone.
 
@@ -63,7 +63,7 @@ While rendering, the build:
 - **rewrites Markdown links** — `chapters/01-06-clinical-safety/` and `../../GLOSSARY.md` become site routes, so the same Markdown reads correctly on GitHub and on the web;
 - **links chapter cross-references** — the book's house style "see Chapter 3.4 — Discovery Phases" (English locales; the same pattern in translated locales is left as plain text, since matching every language's grammar and mutation rules correctly is out of scope) becomes a link to the chapter page (never to the page you are already on, and never inside another link);
 - **adds heading anchors** — every `##` and `###` gets a stable GitHub-style slug id, listed in the "On this page" panel;
-- **derives prev/next** from chapter directory order within the current locale, and writes `sitemap.xml` and `hreflang` alternate links across all five locales.
+- **derives prev/next** from chapter directory order within the current locale, and writes `sitemap.xml` and `hreflang` alternate links across all eight locales.
 
 Chapter numbers come from the directory slug (`01-00-introduction` → 1.0), not from parsing the heading text — the heading reads "Chapter 1.0 — …" in English locales and "Pennod 1.0 — …" in Welsh, so this is the one thing that works for every locale without hard-coding a translation of the word "Chapter".
 
@@ -75,7 +75,7 @@ If a link in the book points at a file that does not exist, the build fails rath
 
 The header carries one control, `PickerBar`, composing four Lily helpers:
 
-- **Language** — the five locales above; switches to the equivalent page, not just the locale's home.
+- **Language** — the eight locales above; switches to the equivalent page, not just the locale's home.
 - **Theme** — Light, Dark, NHS England / Scotland / Wales (patients and practitioners), and GOV.UK. The choice is persisted, and the first visit follows the operating system's light/dark preference.
 - **Text size** — small, medium, large, x-large, persisted in `localStorage`.
 - **Share** — copy link, plus any configured share targets.

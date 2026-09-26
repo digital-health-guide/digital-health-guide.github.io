@@ -132,7 +132,7 @@ A national body such as NHS England or a devolved health department sets the sta
 ## Key sources
 
 - Nicole Forsgren, Jez Humble & Gene Kim, *Accelerate: The Science of Lean Software and Development and DevOps* — the DORA research and the four key metrics.
-- DORA (DevOps Research and Assessment) — annual State of DevOps reports and capability catalogue — dora.dev.
+- DORA (DevOps Research and Assessment) — annual State of DevOps reports and capability catalog — dora.dev.
 - Jez Humble & David Farley, *Continuous Delivery* — the deployment pipeline and release automation.
 - Betsy Beyer et al. (eds.), *Site Reliability Engineering* — Google's SRE book on running production systems.
 - NHS England — NHS Service Standard and NHS Digital Service Manual (including coding in the open and open standards).

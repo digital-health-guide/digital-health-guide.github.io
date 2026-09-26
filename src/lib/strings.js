@@ -6,7 +6,8 @@
 //
 // The four English locales (en-gb, en-us, en-gb-oxendict, en-001) share one
 // table: none of these short UI strings has a US/UK/Oxford spelling
-// difference. Only Welsh (cy-gb) needs its own.
+// difference. Welsh (cy-001), Chinese (zh-cn), and Spanish (es-001) each need
+// their own.
 
 const en = {
 	skipToMain: 'Skip to main content',
@@ -100,13 +101,154 @@ const cyGb = {
 	tryIndex: 'mynegai'
 };
 
+const zhCn = {
+	skipToMain: '跳到主要内容',
+	siteHeader: '网站页眉',
+	mainNav: '主导航',
+	navContents: '目录',
+	navGlossary: '术语表',
+	navIndex: '索引',
+	navStyleGuide: '风格指南',
+	navSpecification: '规范',
+	navGitHub: 'GitHub',
+	pickerTheme: '主题',
+	pickerLocale: '语言',
+	pickerTextSize: '字号',
+	pickerShare: '分享',
+	pickerShareCopyLink: '复制链接',
+	pickerShareCopied: '已复制',
+	breadcrumb: '面包屑导航',
+	breadcrumbChapters: '章节',
+	breadcrumbReference: '参考资料',
+	onThisPage: '本页内容',
+	headingAnchorPrefix: '链接到',
+	chapterNavigation: '章节导航',
+	previous: '上一页',
+	next: '下一页',
+	editOnGitHub: '在 GitHub 上编辑此页',
+	sourceOfTruth: '本书是权威来源；本网站仅负责呈现。',
+	siteFooter: '网站页脚',
+	footerDescription:
+		'一本关于在医疗与社会保健机构中交付数字服务最佳实践的实用手册。作者：Joel Parker Henderson。构建工具：',
+	footerLilyLink: 'Lily Design System',
+	footerGitHub: 'GitHub',
+	footerGitLab: 'GitLab',
+	footerCodeberg: 'Codeberg',
+	footerSpecification: '规范',
+	notFoundHeading: '页面未找到',
+	errorHeading: '出现错误',
+	notFoundBody: '没有页面位于',
+	notFoundBodyEnd: '本书可能已移动或重命名该页面。',
+	errorBodyFallback: '无法加载该页面。',
+	tryPrefix: '请尝试',
+	tryTableOfContents: '目录',
+	tryGlossary: '术语表',
+	tryOr: '或',
+	tryIndex: '索引'
+};
+
+const es = {
+	skipToMain: 'Saltar al contenido principal',
+	siteHeader: 'Encabezado del sitio',
+	mainNav: 'Navegación principal',
+	navContents: 'Contenido',
+	navGlossary: 'Glosario',
+	navIndex: 'Índice',
+	navStyleGuide: 'Guía de estilo',
+	navSpecification: 'Especificación',
+	navGitHub: 'GitHub',
+	pickerTheme: 'Tema',
+	pickerLocale: 'Idioma',
+	pickerTextSize: 'Tamaño del texto',
+	pickerShare: 'Compartir',
+	pickerShareCopyLink: 'Copiar enlace',
+	pickerShareCopied: 'Copiado',
+	breadcrumb: 'Ruta de navegación',
+	breadcrumbChapters: 'Capítulos',
+	breadcrumbReference: 'Referencia',
+	onThisPage: 'En esta página',
+	headingAnchorPrefix: 'Enlace a',
+	chapterNavigation: 'Navegación de capítulos',
+	previous: 'Anterior',
+	next: 'Siguiente',
+	editOnGitHub: 'Editar esta página en GitHub',
+	sourceOfTruth: 'el libro es la fuente de la verdad; este sitio lo presenta.',
+	siteFooter: 'Pie de página del sitio',
+	footerDescription:
+		'un manual práctico de buenas prácticas para prestar servicios digitales en organizaciones de salud y atención social. Escrito por Joel Parker Henderson. Construido con',
+	footerLilyLink: 'Lily Design System',
+	footerGitHub: 'GitHub',
+	footerGitLab: 'GitLab',
+	footerCodeberg: 'Codeberg',
+	footerSpecification: 'Especificación',
+	notFoundHeading: 'Página no encontrada',
+	errorHeading: 'Algo salió mal',
+	notFoundBody: 'No hay ninguna página en',
+	notFoundBodyEnd: 'Es posible que el libro se haya movido o cambiado de nombre.',
+	errorBodyFallback: 'No se pudo cargar la página.',
+	tryPrefix: 'Prueba con el',
+	tryTableOfContents: 'contenido',
+	tryGlossary: 'glosario',
+	tryOr: 'o el',
+	tryIndex: 'índice'
+};
+
+const hi = {
+	skipToMain: 'मुख्य सामग्री पर जाएं',
+	siteHeader: 'साइट हेडर',
+	mainNav: 'मुख्य नेविगेशन',
+	navContents: 'सामग्री',
+	navGlossary: 'शब्दावली',
+	navIndex: 'सूचकांक',
+	navStyleGuide: 'शैली मार्गदर्शिका',
+	navSpecification: 'विनिर्देश',
+	navGitHub: 'GitHub',
+	pickerTheme: 'थीम',
+	pickerLocale: 'भाषा',
+	pickerTextSize: 'पाठ आकार',
+	pickerShare: 'साझा करें',
+	pickerShareCopyLink: 'लिंक कॉपी करें',
+	pickerShareCopied: 'कॉपी किया गया',
+	breadcrumb: 'ब्रेडक्रम्ब',
+	breadcrumbChapters: 'अध्याय',
+	breadcrumbReference: 'संदर्भ',
+	onThisPage: 'इस पृष्ठ पर',
+	headingAnchorPrefix: 'लिंक',
+	chapterNavigation: 'अध्याय नेविगेशन',
+	previous: 'पिछला',
+	next: 'अगला',
+	editOnGitHub: 'GitHub पर इस पृष्ठ को संपादित करें',
+	sourceOfTruth: 'पुस्तक सत्य का स्रोत है; यह साइट इसे प्रस्तुत करती है।',
+	siteFooter: 'साइट फ़ुटर',
+	footerDescription:
+		'स्वास्थ्य और सामाजिक देखभाल संगठनों में डिजिटल सेवाएं देने की सर्वोत्तम प्रथाओं की एक व्यावहारिक हैंडबुक। Joel Parker Henderson द्वारा लिखित। इसके साथ बनाया गया',
+	footerLilyLink: 'Lily Design System',
+	footerGitHub: 'GitHub',
+	footerGitLab: 'GitLab',
+	footerCodeberg: 'Codeberg',
+	footerSpecification: 'विनिर्देश',
+	notFoundHeading: 'पृष्ठ नहीं मिला',
+	errorHeading: 'कुछ गलत हो गया',
+	notFoundBody: 'यहां कोई पृष्ठ नहीं है',
+	notFoundBodyEnd: 'हो सकता है पुस्तक ने इसे स्थानांतरित या पुनर्नामित किया हो।',
+	errorBodyFallback: 'पृष्ठ लोड नहीं किया जा सका।',
+	tryPrefix: 'कोशिश करें',
+	tryTableOfContents: 'सामग्री',
+	tryGlossary: 'शब्दावली',
+	tryOr: 'या',
+	tryIndex: 'सूचकांक'
+};
+
 /** @type {Record<string, typeof en>} */
 const TABLES = {
 	'en-gb': en,
 	'en-us': en,
 	'en-gb-oxendict': en,
 	'en-001': en,
-	'cy-gb': cyGb
+	'cy-001': cyGb,
+	'zh-cn': zhCn,
+	'es-001': es,
+	'hi-in': hi
 };
 
 /** Site chrome strings for one locale, falling back to English. */

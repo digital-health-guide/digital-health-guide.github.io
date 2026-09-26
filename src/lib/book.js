@@ -103,7 +103,7 @@ function localeForRoute(route) {
 /**
  * Render one document for a page load.
  *
- * @param {string} route e.g. "/chapters/01-00-introduction/" or "/cy-gb/chapters/01-00-introduction/"
+ * @param {string} route e.g. "/chapters/01-00-introduction/" or "/cy-001/chapters/01-00-introduction/"
  */
 export function document(route) {
 	const locale = localeForRoute(route);
