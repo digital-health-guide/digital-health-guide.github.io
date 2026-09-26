@@ -44,7 +44,7 @@
 	<div class="site-header-inner">
 		<a class="site-brand" href={home}>
 			<img src="/icon-600.png" alt="" aria-hidden="true" width="32" height="32" />
-			<span>Digital Health Guide</span>
+			<span>{t.siteBrand}</span>
 		</a>
 		<nav class="site-nav" aria-label={t.mainNav}>
 			{#each links as link (link.href)}
@@ -84,7 +84,7 @@
 <Footer label={t.siteFooter} class="site-footer">
 	<div class="site-footer-inner">
 		<p>
-			<em>Digital Health Guide</em> — {t.footerDescription}
+			<em>{t.siteBrand}</em> — {t.footerDescription}
 			<a href="https://github.com/LilyDesignSystem">{t.footerLilyLink}</a>.
 		</p>
 		<div class="site-footer-links">

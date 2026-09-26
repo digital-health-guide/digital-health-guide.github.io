@@ -10,7 +10,7 @@
 	import PaginationList from '$lib/lily/components/PaginationList.svelte';
 	import PaginationListItem from '$lib/lily/components/PaginationListItem.svelte';
 	import AlternateLinks from '$lib/components/AlternateLinks.svelte';
-	import { REPOSITORY, SITE_NAME, SITE_URL } from '$lib/site.js';
+	import { REPOSITORY, SITE_URL } from '$lib/site.js';
 	import { localePrefix, bookFilePath } from '$lib/locales.js';
 	import { stringsFor } from '$lib/strings.js';
 
@@ -26,7 +26,7 @@
 </script>
 
 <svelte:head>
-	<title>{doc.title} — {SITE_NAME}</title>
+	<title>{doc.title} — {t.siteBrand}</title>
 	<meta name="description" content={doc.summary} />
 	<link rel="canonical" href={url} />
 	<AlternateLinks {alternates} />

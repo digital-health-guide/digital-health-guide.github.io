@@ -10,6 +10,7 @@
 // their own.
 
 const en = {
+	siteBrand: 'Digital Health Guide',
 	skipToMain: 'Skip to main content',
 	siteHeader: 'Site header',
 	mainNav: 'Main',
@@ -56,6 +57,7 @@ const en = {
 };
 
 const cyGb = {
+	siteBrand: 'Digital Health Guide',
 	skipToMain: 'Neidio i’r prif gynnwys',
 	siteHeader: 'Pennawd y wefan',
 	mainNav: 'Prif lywio',
@@ -102,6 +104,7 @@ const cyGb = {
 };
 
 const zhCn = {
+	siteBrand: '数字健康指南',
 	skipToMain: '跳到主要内容',
 	siteHeader: '网站页眉',
 	mainNav: '主导航',
@@ -148,6 +151,7 @@ const zhCn = {
 };
 
 const es = {
+	siteBrand: 'Guía de Salud Digital',
 	skipToMain: 'Saltar al contenido principal',
 	siteHeader: 'Encabezado del sitio',
 	mainNav: 'Navegación principal',
@@ -194,6 +198,7 @@ const es = {
 };
 
 const hi = {
+	siteBrand: 'डिजिटल स्वास्थ्य मार्गदर्शिका',
 	skipToMain: 'मुख्य सामग्री पर जाएं',
 	siteHeader: 'साइट हेडर',
 	mainNav: 'मुख्य नेविगेशन',

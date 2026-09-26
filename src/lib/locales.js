@@ -19,7 +19,7 @@ export const LOCALES = [
 	{ slug: 'en-us', label: 'English - United States', hreflang: 'en-US' },
 	{ slug: 'es-001', label: 'Español', hreflang: 'es-001' },
 	{ slug: 'hi-in', label: 'हिन्दी', hreflang: 'hi-IN' },
-	{ slug: 'zh-cn', label: '中文（中国）', hreflang: 'zh-CN' }
+	{ slug: 'zh-cn', label: '中文', hreflang: 'zh-CN' }
 ];
 
 export const DEFAULT_LOCALE = 'en-gb';
