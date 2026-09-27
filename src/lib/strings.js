@@ -50,7 +50,7 @@ const en = {
 	notFoundBodyEnd: 'The book may have moved or renamed it.',
 	errorBodyFallback: 'The page could not be loaded.',
 	tryPrefix: 'Try the',
-	tryTableOfContents: 'table of contents',
+	tryTableOfContents: 'contents',
 	tryGlossary: 'glossary',
 	tryOr: 'or the',
 	tryIndex: 'index'
