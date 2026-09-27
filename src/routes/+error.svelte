@@ -1,7 +1,6 @@
 <script>
 	import { page } from '$app/state';
 	import ArticleLayout from '$lib/lily/components/ArticleLayout.svelte';
-	import { SITE_NAME } from '$lib/site.js';
 	import { PREFIXED_LOCALE_SLUGS, DEFAULT_LOCALE } from '$lib/locales.js';
 	import { stringsFor } from '$lib/strings.js';
 
@@ -19,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>{heading} — {SITE_NAME}</title>
+	<title>{heading} — {t.siteBrand}</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
