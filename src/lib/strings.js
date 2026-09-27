@@ -197,6 +197,53 @@ const es = {
 	tryIndex: 'índice'
 };
 
+const fr = {
+	siteBrand: 'Guide de la santé numérique',
+	skipToMain: 'Aller au contenu principal',
+	siteHeader: 'En-tête du site',
+	mainNav: 'Navigation principale',
+	navContents: 'Sommaire',
+	navGlossary: 'Glossaire',
+	navIndex: 'Index',
+	navStyleGuide: 'Guide de style',
+	navSpecification: 'Spécification',
+	navGitHub: 'GitHub',
+	pickerTheme: 'Thème',
+	pickerLocale: 'Langue',
+	pickerTextSize: 'Taille du texte',
+	pickerShare: 'Partager',
+	pickerShareCopyLink: 'Copier le lien',
+	pickerShareCopied: 'Copié',
+	breadcrumb: 'Fil d’Ariane',
+	breadcrumbChapters: 'Chapitres',
+	breadcrumbReference: 'Référence',
+	onThisPage: 'Sur cette page',
+	headingAnchorPrefix: 'Lien vers',
+	chapterNavigation: 'Navigation des chapitres',
+	previous: 'Précédent',
+	next: 'Suivant',
+	editOnGitHub: 'Modifier cette page sur GitHub',
+	sourceOfTruth: 'le livre est la source de vérité ; ce site le présente.',
+	siteFooter: 'Pied de page du site',
+	footerDescription:
+		'un manuel pratique des bonnes pratiques pour livrer des services numériques dans les organisations de santé et d’action sociale. Écrit par Joel Parker Henderson. Construit avec le',
+	footerLilyLink: 'Lily Design System',
+	footerGitHub: 'GitHub',
+	footerGitLab: 'GitLab',
+	footerCodeberg: 'Codeberg',
+	footerSpecification: 'Spécification',
+	notFoundHeading: 'Page introuvable',
+	errorHeading: 'Une erreur est survenue',
+	notFoundBody: 'Il n’y a aucune page à',
+	notFoundBodyEnd: 'Le livre l’a peut-être déplacée ou renommée.',
+	errorBodyFallback: 'La page n’a pas pu être chargée.',
+	tryPrefix: 'Essayez le',
+	tryTableOfContents: 'sommaire',
+	tryGlossary: 'glossaire',
+	tryOr: 'ou l’',
+	tryIndex: 'index'
+};
+
 const hi = {
 	siteBrand: 'डिजिटल स्वास्थ्य मार्गदर्शिका',
 	skipToMain: 'मुख्य सामग्री पर जाएं',
@@ -253,6 +300,7 @@ const TABLES = {
 	'cy-001': cyGb,
 	'zh-cn': zhCn,
 	'es-001': es,
+	'fr-001': fr,
 	'hi-in': hi
 };
 
