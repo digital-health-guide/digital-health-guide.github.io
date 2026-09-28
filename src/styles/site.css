@@ -118,6 +118,21 @@ body {
 	gap: var(--lily-space-sm, 0.75rem);
 }
 
+/* The Lily theme opens every picker's dropdown from the trigger's own
+   *start* edge (inset-inline-start: 0), growing toward the end. The picker
+   bar always sits at the end of the header row (site-nav's margin-inline-
+   start: auto pushes it there, in both LTR and RTL), so that's exactly the
+   direction with the least room — a long list (e.g. ten locale names,
+   "English - Great Britain - Oxford" among them) overflows past the
+   viewport's trailing edge, and the browser auto-scrolls the whole page
+   horizontally to reveal it, which reads as the page lurching sideways the
+   instant a picker opens. Anchor to the trigger's *end* edge instead, so
+   the list opens back toward the header's own space, where there's room. */
+.site-tools :is(.theme-picker-list, .locale-picker-list, .text-size-picker-list, .share-picker-list) {
+	inset-inline-start: auto;
+	inset-inline-end: 0;
+}
+
 /* SharePicker (unlike the other three pickers) always renders a trailing
    <p class="share-picker-status" aria-live="polite">, even when empty, for
    announcing copy/share results to screen readers. Left in normal flow, an
