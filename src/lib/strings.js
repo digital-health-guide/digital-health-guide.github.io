@@ -6,8 +6,8 @@
 //
 // The four English locales (en-gb, en-us, en-gb-oxendict, en-001) share one
 // table: none of these short UI strings has a US/UK/Oxford spelling
-// difference. Welsh (cy-001), Chinese (zh-cn), and Spanish (es-001) each need
-// their own.
+// difference. Arabic (ar-001), Welsh (cy-001), Chinese (zh-cn), Spanish
+// (es-001), French (fr-001), and Hindi (hi-in) each need their own.
 
 const en = {
 	siteBrand: 'Digital Health Guide',
@@ -54,6 +54,53 @@ const en = {
 	tryGlossary: 'glossary',
 	tryOr: 'or the',
 	tryIndex: 'index'
+};
+
+const ar = {
+	siteBrand: 'دليل الصحة الرقمية',
+	skipToMain: 'الانتقال إلى المحتوى الرئيسي',
+	siteHeader: 'رأس الموقع',
+	mainNav: 'التنقل الرئيسي',
+	navContents: 'المحتويات',
+	navGlossary: 'المسرد',
+	navIndex: 'الفهرس',
+	navStyleGuide: 'دليل الأسلوب',
+	navSpecification: 'المواصفات',
+	navGitHub: 'GitHub',
+	pickerTheme: 'السمة',
+	pickerLocale: 'اللغة',
+	pickerTextSize: 'حجم النص',
+	pickerShare: 'مشاركة',
+	pickerShareCopyLink: 'نسخ الرابط',
+	pickerShareCopied: 'تم النسخ',
+	breadcrumb: 'مسار التنقل',
+	breadcrumbChapters: 'الفصول',
+	breadcrumbReference: 'المرجع',
+	onThisPage: 'في هذه الصفحة',
+	headingAnchorPrefix: 'رابط إلى',
+	chapterNavigation: 'التنقل بين الفصول',
+	previous: 'السابق',
+	next: 'التالي',
+	editOnGitHub: 'تعديل هذه الصفحة على GitHub',
+	sourceOfTruth: 'الكتاب هو مصدر الحقيقة؛ هذا الموقع يعرضه.',
+	siteFooter: 'تذييل الموقع',
+	footerDescription:
+		'دليل عملي لأفضل الممارسات في تقديم الخدمات الرقمية في مؤسسات الصحة والرعاية الاجتماعية. كتبه Joel Parker Henderson. بُني باستخدام',
+	footerLilyLink: 'Lily Design System',
+	footerGitHub: 'GitHub',
+	footerGitLab: 'GitLab',
+	footerCodeberg: 'Codeberg',
+	footerSpecification: 'المواصفات',
+	notFoundHeading: 'الصفحة غير موجودة',
+	errorHeading: 'حدث خطأ ما',
+	notFoundBody: 'لا توجد صفحة في',
+	notFoundBodyEnd: 'ربما يكون الكتاب قد نقلها أو غيّر اسمها.',
+	errorBodyFallback: 'تعذّر تحميل الصفحة.',
+	tryPrefix: 'جرّب',
+	tryTableOfContents: 'المحتويات',
+	tryGlossary: 'المسرد',
+	tryOr: 'أو',
+	tryIndex: 'الفهرس'
 };
 
 const cyGb = {
@@ -297,6 +344,7 @@ const TABLES = {
 	'en-us': en,
 	'en-gb-oxendict': en,
 	'en-001': en,
+	'ar-001': ar,
 	'cy-001': cyGb,
 	'zh-cn': zhCn,
 	'es-001': es,
