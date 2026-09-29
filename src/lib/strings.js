@@ -6,7 +6,7 @@
 //
 // The four English locales (en-gb, en-us, en-gb-oxendict, en-001) share one
 // table: none of these short UI strings has a US/UK/Oxford spelling
-// difference. Arabic (ar-001), Welsh (cy-001), Chinese (zh-cn), Spanish
+// difference. Arabic (ar-001), Welsh (cy-001), German (de-de), Chinese (zh-cn), Spanish
 // (es-001), French (fr-001), and Hindi (hi-in) each need their own.
 
 const en = {
@@ -338,6 +338,53 @@ const hi = {
 	tryIndex: 'सूचकांक'
 };
 
+const de = {
+	siteBrand: 'Digital Health Guide',
+	skipToMain: 'Zum Hauptinhalt springen',
+	siteHeader: 'Kopfbereich der Website',
+	mainNav: 'Hauptnavigation',
+	navContents: 'Inhalt',
+	navGlossary: 'Glossar',
+	navIndex: 'Index',
+	navStyleGuide: 'Styleguide',
+	navSpecification: 'Spezifikation',
+	navGitHub: 'GitHub',
+	pickerTheme: 'Design',
+	pickerLocale: 'Sprache',
+	pickerTextSize: 'Textgröße',
+	pickerShare: 'Teilen',
+	pickerShareCopyLink: 'Link kopieren',
+	pickerShareCopied: 'Kopiert',
+	breadcrumb: 'Brotkrümelnavigation',
+	breadcrumbChapters: 'Kapitel',
+	breadcrumbReference: 'Referenz',
+	onThisPage: 'Auf dieser Seite',
+	headingAnchorPrefix: 'Link zu',
+	chapterNavigation: 'Kapitelnavigation',
+	previous: 'Zurück',
+	next: 'Weiter',
+	editOnGitHub: 'Diese Seite auf GitHub bearbeiten',
+	sourceOfTruth: 'das Buch ist die Quelle der Wahrheit; diese Website stellt es dar.',
+	siteFooter: 'Fußbereich der Website',
+	footerDescription:
+		'ein praxisnahes Handbuch bewährter Praktiken für die Erbringung digitaler Services in Organisationen des Gesundheits- und Sozialwesens. Geschrieben von Joel Parker Henderson. Erstellt mit dem',
+	footerLilyLink: 'Lily Design System',
+	footerGitHub: 'GitHub',
+	footerGitLab: 'GitLab',
+	footerCodeberg: 'Codeberg',
+	footerSpecification: 'Spezifikation',
+	notFoundHeading: 'Seite nicht gefunden',
+	errorHeading: 'Etwas ist schiefgelaufen',
+	notFoundBody: 'Unter',
+	notFoundBodyEnd: 'gibt es keine Seite. Das Buch hat sie möglicherweise verschoben oder umbenannt.',
+	errorBodyFallback: 'Die Seite konnte nicht geladen werden.',
+	tryPrefix: 'Probieren Sie das',
+	tryTableOfContents: 'Inhaltsverzeichnis',
+	tryGlossary: 'Glossar',
+	tryOr: 'oder den',
+	tryIndex: 'Index'
+};
+
 /** @type {Record<string, typeof en>} */
 const TABLES = {
 	'en-gb': en,
@@ -346,6 +393,7 @@ const TABLES = {
 	'en-001': en,
 	'ar-001': ar,
 	'cy-001': cyGb,
+	'de-de': de,
 	'zh-cn': zhCn,
 	'es-001': es,
 	'fr-001': fr,
