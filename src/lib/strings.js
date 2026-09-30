@@ -6,7 +6,7 @@
 //
 // The four English locales (en-gb, en-us, en-gb-oxendict, en-001) share one
 // table: none of these short UI strings has a US/UK/Oxford spelling
-// difference. Arabic (ar-001), Welsh (cy-001), German (de-de), Chinese (zh-cn), Spanish
+// difference. Arabic (ar-001), Welsh (cy-001), German (de-de), Japanese (ja-jp), Chinese (zh-cn), Spanish
 // (es-001), French (fr-001), and Hindi (hi-in) each need their own.
 
 const en = {
@@ -385,6 +385,53 @@ const de = {
 	tryIndex: 'Index'
 };
 
+const ja = {
+	siteBrand: 'Digital Health Guide',
+	skipToMain: 'メインコンテンツへスキップ',
+	siteHeader: 'サイトヘッダー',
+	mainNav: 'メインナビゲーション',
+	navContents: '目次',
+	navGlossary: '用語集',
+	navIndex: '索引',
+	navStyleGuide: 'スタイルガイド',
+	navSpecification: '仕様',
+	navGitHub: 'GitHub',
+	pickerTheme: 'テーマ',
+	pickerLocale: '言語',
+	pickerTextSize: '文字サイズ',
+	pickerShare: '共有',
+	pickerShareCopyLink: 'リンクをコピー',
+	pickerShareCopied: 'コピーしました',
+	breadcrumb: 'パンくずリスト',
+	breadcrumbChapters: '章',
+	breadcrumbReference: '参照',
+	onThisPage: 'このページの内容',
+	headingAnchorPrefix: 'リンク先：',
+	chapterNavigation: '章のナビゲーション',
+	previous: '前へ',
+	next: '次へ',
+	editOnGitHub: 'GitHubでこのページを編集',
+	sourceOfTruth: '本書が信頼できる唯一の情報源であり、このサイトはそれを表示するだけです。',
+	siteFooter: 'サイトフッター',
+	footerDescription:
+		'保健・社会的ケア組織でデジタルサービスを届けるための、実践的なベストプラクティス・ハンドブック。執筆：Joel Parker Henderson。使用：',
+	footerLilyLink: 'Lily Design System',
+	footerGitHub: 'GitHub',
+	footerGitLab: 'GitLab',
+	footerCodeberg: 'Codeberg',
+	footerSpecification: '仕様',
+	notFoundHeading: 'ページが見つかりません',
+	errorHeading: '問題が発生しました',
+	notFoundBody: '',
+	notFoundBodyEnd: 'にページはありません。本書で移動または名前が変更された可能性があります。',
+	errorBodyFallback: 'ページを読み込めませんでした。',
+	tryPrefix: '次をお試しください：',
+	tryTableOfContents: '目次',
+	tryGlossary: '用語集',
+	tryOr: 'または',
+	tryIndex: '索引'
+};
+
 /** @type {Record<string, typeof en>} */
 const TABLES = {
 	'en-gb': en,
@@ -394,6 +441,7 @@ const TABLES = {
 	'ar-001': ar,
 	'cy-001': cyGb,
 	'de-de': de,
+	'ja-jp': ja,
 	'zh-cn': zhCn,
 	'es-001': es,
 	'fr-001': fr,
