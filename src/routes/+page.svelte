@@ -1,5 +1,5 @@
 <script>
-	import HomePage from '$lib/components/HomePage.svelte';
+	import HomePage from '#lib/components/HomePage.svelte';
 
 	let { data } = $props();
 </script>

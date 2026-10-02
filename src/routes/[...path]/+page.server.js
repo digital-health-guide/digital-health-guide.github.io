@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
-import { routes } from '$lib/book.js';
-import { loadDoc } from '$lib/pageData.js';
-import { DEFAULT_LOCALE } from '$lib/locales.js';
+import { routes } from '#lib/book.js';
+import { loadDoc } from '#lib/pageData.js';
+import { DEFAULT_LOCALE } from '#lib/locales.js';
 
 /** Prerender every document the default locale publishes, without relying on crawling. */
 export function entries() {

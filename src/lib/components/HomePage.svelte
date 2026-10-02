@@ -1,10 +1,10 @@
 <script>
-	import ArticleLayout from '$lib/lily/components/ArticleLayout.svelte';
-	import AlternateLinks from '$lib/components/AlternateLinks.svelte';
-	import { SITE_URL } from '$lib/site.js';
-	import { stringsFor } from '$lib/strings.js';
+	import ArticleLayout from '#lib/lily/components/ArticleLayout.svelte';
+	import AlternateLinks from '#lib/components/AlternateLinks.svelte';
+	import { SITE_URL } from '#lib/site.js';
+	import { stringsFor } from '#lib/strings.js';
 
-	/** @type {{ doc: import('$lib/book.js').document, alternates: { locale: string, route: string }[] }} */
+	/** @type {{ doc: import('#lib/book.js').document, alternates: { locale: string, route: string }[] }} */
 	let { doc, alternates } = $props();
 
 	const url = $derived(`${SITE_URL}${doc.route}`);

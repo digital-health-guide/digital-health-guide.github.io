@@ -1,8 +1,8 @@
 <script>
 	import { page } from '$app/state';
-	import ArticleLayout from '$lib/lily/components/ArticleLayout.svelte';
-	import { PREFIXED_LOCALE_SLUGS, DEFAULT_LOCALE } from '$lib/locales.js';
-	import { stringsFor } from '$lib/strings.js';
+	import ArticleLayout from '#lib/lily/components/ArticleLayout.svelte';
+	import { PREFIXED_LOCALE_SLUGS, DEFAULT_LOCALE } from '#lib/locales.js';
+	import { stringsFor } from '#lib/strings.js';
 
 	// The static 404.html is shared by every unmatched URL; once it hydrates,
 	// page.url reflects the real browser location, so both the chrome and

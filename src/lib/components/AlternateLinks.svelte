@@ -2,8 +2,8 @@
 	// <link rel="alternate" hreflang="…"> for every locale that has an
 	// equivalent page, so search engines offer readers their own language.
 	// See https://developers.google.com/search/docs/specialty/international/localized-versions
-	import { SITE_URL } from '$lib/site.js';
-	import { HREFLANG_BY_SLUG } from '$lib/locales.js';
+	import { SITE_URL } from '#lib/site.js';
+	import { HREFLANG_BY_SLUG } from '#lib/locales.js';
 
 	/** @type {{ alternates: { locale: string, route: string }[] }} */
 	let { alternates } = $props();

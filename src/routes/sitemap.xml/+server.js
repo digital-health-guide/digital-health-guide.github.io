@@ -1,6 +1,6 @@
-import { routes } from '$lib/book.js';
-import { SITE_URL } from '$lib/site.js';
-import { LOCALES, localePrefix } from '$lib/locales.js';
+import { routes } from '#lib/book.js';
+import { SITE_URL } from '#lib/site.js';
+import { LOCALES, localePrefix } from '#lib/locales.js';
 
 export const prerender = true;
 

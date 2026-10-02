@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { loadDoc } from '$lib/pageData.js';
+import { loadDoc } from '#lib/pageData.js';
 
 export function load() {
 	const data = loadDoc('/');

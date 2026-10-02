@@ -1,13 +1,13 @@
 <script>
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
-	import SkipLink from '$lib/lily/components/SkipLink.svelte';
-	import Header from '$lib/lily/components/Header.svelte';
-	import Footer from '$lib/lily/components/Footer.svelte';
-	import PickerBar from '$lib/lily/helpers/picker-bar/index.ts';
-	import { REPOSITORY, THEMES, THEME_LABELS } from '$lib/site.js';
-	import { LOCALES, LOCALE_LABELS, DEFAULT_LOCALE, localePrefix } from '$lib/locales.js';
-	import { stringsFor } from '$lib/strings.js';
+	import SkipLink from '#lib/lily/components/SkipLink.svelte';
+	import Header from '#lib/lily/components/Header.svelte';
+	import Footer from '#lib/lily/components/Footer.svelte';
+	import PickerBar from '#lib/lily/helpers/picker-bar/index.ts';
+	import { REPOSITORY, THEMES, THEME_LABELS } from '#lib/site.js';
+	import { LOCALES, LOCALE_LABELS, DEFAULT_LOCALE, localePrefix } from '#lib/locales.js';
+	import { stringsFor } from '#lib/strings.js';
 	import '../styles/site.css';
 
 	let { children } = $props();

@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { loadDoc } from '$lib/pageData.js';
-import { PREFIXED_LOCALE_SLUGS } from '$lib/locales.js';
+import { loadDoc } from '#lib/pageData.js';
+import { PREFIXED_LOCALE_SLUGS } from '#lib/locales.js';
 
 export function entries() {
 	return [...PREFIXED_LOCALE_SLUGS].map((locale) => ({ locale }));
