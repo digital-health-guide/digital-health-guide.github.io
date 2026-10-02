@@ -7,7 +7,7 @@
 // The four English locales (en-gb, en-us, en-gb-oxendict, en-001) share one
 // table: none of these short UI strings has a US/UK/Oxford spelling
 // difference. Arabic (ar-001), Welsh (cy-001), German (de-de), Japanese (ja-jp), Chinese (zh-cn), Spanish
-// (es-001), French (fr-001), and Hindi (hi-in) each need their own.
+// (es-001), French (fr-001), Hindi (hi-in), and Bengali (bn-001) each need their own.
 
 const en = {
 	siteBrand: 'Digital Health Guide',
@@ -432,6 +432,53 @@ const ja = {
 	tryIndex: '索引'
 };
 
+const bn = {
+	siteBrand: 'ডিজিটাল স্বাস্থ্য নির্দেশিকা',
+	skipToMain: 'মূল বিষয়বস্তুতে যান',
+	siteHeader: 'সাইট হেডার',
+	mainNav: 'প্রধান নেভিগেশন',
+	navContents: 'সূচিপত্র',
+	navGlossary: 'শব্দকোষ',
+	navIndex: 'সূচক',
+	navStyleGuide: 'স্টাইল গাইড',
+	navSpecification: 'স্পেসিফিকেশন',
+	navGitHub: 'GitHub',
+	pickerTheme: 'থিম',
+	pickerLocale: 'ভাষা',
+	pickerTextSize: 'লেখার আকার',
+	pickerShare: 'শেয়ার করুন',
+	pickerShareCopyLink: 'লিংক কপি করুন',
+	pickerShareCopied: 'কপি হয়েছে',
+	breadcrumb: 'ব্রেডক্রাম্ব',
+	breadcrumbChapters: 'অধ্যায়',
+	breadcrumbReference: 'তথ্যসূত্র',
+	onThisPage: 'এই পৃষ্ঠায়',
+	headingAnchorPrefix: 'লিংক',
+	chapterNavigation: 'অধ্যায় নেভিগেশন',
+	previous: 'আগের',
+	next: 'পরের',
+	editOnGitHub: 'GitHub-এ এই পৃষ্ঠা সম্পাদনা করুন',
+	sourceOfTruth: 'বইটিই সত্যের উৎস; এই সাইট কেবল এটি উপস্থাপন করে।',
+	siteFooter: 'সাইট ফুটার',
+	footerDescription:
+		'স্বাস্থ্য ও সামাজিক পরিচর্যা প্রতিষ্ঠানে ডিজিটাল সেবা সরবরাহের শ্রেষ্ঠ চর্চার একটি ব্যবহারিক হ্যান্ডবুক। লেখক Joel Parker Henderson। তৈরি হয়েছে এর সাহায্যে',
+	footerLilyLink: 'Lily Design System',
+	footerGitHub: 'GitHub',
+	footerGitLab: 'GitLab',
+	footerCodeberg: 'Codeberg',
+	footerSpecification: 'স্পেসিফিকেশন',
+	notFoundHeading: 'পৃষ্ঠা পাওয়া যায়নি',
+	errorHeading: 'কিছু একটা ভুল হয়েছে',
+	notFoundBody: 'এখানে কোনো পৃষ্ঠা নেই',
+	notFoundBodyEnd: 'হয়তো বইটি এটি সরিয়েছে বা নাম বদলেছে।',
+	errorBodyFallback: 'পৃষ্ঠাটি লোড করা যায়নি।',
+	tryPrefix: 'চেষ্টা করুন',
+	tryTableOfContents: 'সূচিপত্র',
+	tryGlossary: 'শব্দকোষ',
+	tryOr: 'বা',
+	tryIndex: 'সূচক'
+};
+
 /** @type {Record<string, typeof en>} */
 const TABLES = {
 	'en-gb': en,
@@ -445,7 +492,8 @@ const TABLES = {
 	'zh-cn': zhCn,
 	'es-001': es,
 	'fr-001': fr,
-	'hi-in': hi
+	'hi-in': hi,
+	'bn-001': bn
 };
 
 /** Site chrome strings for one locale, falling back to English. */
