@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && node scripts/build-search-index.mjs build none",
     "preview": "vite preview",
     "sync": "node bin/sync-content.mjs",
     "sync:lily": "node bin/sync-lily.mjs",

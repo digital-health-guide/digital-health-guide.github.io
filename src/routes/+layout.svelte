@@ -3,6 +3,7 @@
 	import { goto } from '$app/navigation';
 	import SkipLink from '#lib/lily/components/SkipLink.svelte';
 	import Header from '#lib/lily/components/Header.svelte';
+	import SearchGate from '#lib/components/SearchGate.svelte';
 	import Footer from '#lib/lily/components/Footer.svelte';
 	import PickerBar from '#lib/lily/helpers/picker-bar/index.ts';
 	import { REPOSITORY, THEMES, THEME_LABELS } from '#lib/site.js';
@@ -78,7 +79,7 @@
 </Header>
 
 <main id="main" class="site-main">
-	{@render children()}
+	<SearchGate {children} />
 </main>
 
 <Footer label={t.siteFooter} class="site-footer">
