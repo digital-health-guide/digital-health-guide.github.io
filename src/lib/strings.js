@@ -7,7 +7,7 @@
 // The four English locales (en-gb, en-us, en-gb-oxendict, en-001) share one
 // table: none of these short UI strings has a US/UK/Oxford spelling
 // difference. Arabic (ar-001), Welsh (cy-001), German (de-de), Japanese (ja-jp), Chinese (zh-cn), Spanish
-// (es-001), French (fr-001), Hindi (hi-in), and Bengali (bn-001) each need their own.
+// (es-001), French (fr-001), Hindi (hi-in), Bengali (bn-001), and Russian (ru-001) each need their own.
 
 const en = {
 	siteBrand: 'Digital Health Guide',
@@ -479,6 +479,53 @@ const bn = {
 	tryIndex: 'সূচক'
 };
 
+const ru = {
+	siteBrand: 'Руководство по цифровому здравоохранению',
+	skipToMain: 'Перейти к основному содержимому',
+	siteHeader: 'Шапка сайта',
+	mainNav: 'Главная навигация',
+	navContents: 'Содержание',
+	navGlossary: 'Глоссарий',
+	navIndex: 'Указатель',
+	navStyleGuide: 'Руководство по стилю',
+	navSpecification: 'Спецификация',
+	navGitHub: 'GitHub',
+	pickerTheme: 'Тема',
+	pickerLocale: 'Язык',
+	pickerTextSize: 'Размер текста',
+	pickerShare: 'Поделиться',
+	pickerShareCopyLink: 'Копировать ссылку',
+	pickerShareCopied: 'Скопировано',
+	breadcrumb: 'Хлебные крошки',
+	breadcrumbChapters: 'Главы',
+	breadcrumbReference: 'Справочные материалы',
+	onThisPage: 'На этой странице',
+	headingAnchorPrefix: 'Ссылка на',
+	chapterNavigation: 'Навигация по главам',
+	previous: 'Назад',
+	next: 'Далее',
+	editOnGitHub: 'Редактировать эту страницу на GitHub',
+	sourceOfTruth: 'источник истины — книга; этот сайт лишь отображает её.',
+	siteFooter: 'Подвал сайта',
+	footerDescription:
+		'практическое руководство по лучшим практикам предоставления цифровых услуг в организациях здравоохранения и социального ухода. Автор — Joel Parker Henderson. Создано с помощью',
+	footerLilyLink: 'Lily Design System',
+	footerGitHub: 'GitHub',
+	footerGitLab: 'GitLab',
+	footerCodeberg: 'Codeberg',
+	footerSpecification: 'Спецификация',
+	notFoundHeading: 'Страница не найдена',
+	errorHeading: 'Что-то пошло не так',
+	notFoundBody: 'Страницы по адресу',
+	notFoundBodyEnd: 'нет. Возможно, книга перенесла или переименовала её.',
+	errorBodyFallback: 'Не удалось загрузить страницу.',
+	tryPrefix: 'Попробуйте',
+	tryTableOfContents: 'содержание',
+	tryGlossary: 'глоссарий',
+	tryOr: 'или',
+	tryIndex: 'указатель'
+};
+
 /** @type {Record<string, typeof en>} */
 const TABLES = {
 	'en-gb': en,
@@ -493,7 +540,8 @@ const TABLES = {
 	'es-001': es,
 	'fr-001': fr,
 	'hi-in': hi,
-	'bn-001': bn
+	'bn-001': bn,
+	'ru-001': ru
 };
 
 /** Site chrome strings for one locale, falling back to English. */

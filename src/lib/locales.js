@@ -8,7 +8,7 @@
 
 /** @type {{ slug: string, label: string, hreflang: string }[]} */
 // Sorted alphabetically by slug (ar-001, bn-001, cy-001, de-de, en-001, en-gb,
-// en-gb-oxendict, en-us, es-001, fr-001, hi-in, ja-jp, zh-cn) — not by label, so
+// en-gb-oxendict, en-us, es-001, fr-001, hi-in, ja-jp, ru-001, zh-cn) — not by label, so
 // "English - Great Britain" sorts before "English - Great Britain - Oxford"
 // rather than by the language name.
 export const LOCALES = [
@@ -24,6 +24,7 @@ export const LOCALES = [
 	{ slug: 'fr-001', label: 'Français', hreflang: 'fr-001' },
 	{ slug: 'hi-in', label: 'हिन्दी', hreflang: 'hi-IN' },
 	{ slug: 'ja-jp', label: '日本語', hreflang: 'ja-JP' },
+	{ slug: 'ru-001', label: 'Русский', hreflang: 'ru-001' },
 	{ slug: 'zh-cn', label: '中文', hreflang: 'zh-CN' }
 ];
 
