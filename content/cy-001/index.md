@@ -1,4 +1,4 @@
-# Digital Health Guide
+# Canllaw Iechyd Digidol
 
 ### Llawlyfr ymarferol o arferion gorau ar gyfer cyflenwi gwasanaethau digidol mewn sefydliadau iechyd a gofal cymdeithasol
 

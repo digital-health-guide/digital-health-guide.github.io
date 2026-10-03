@@ -104,7 +104,7 @@ const ar = {
 };
 
 const cyGb = {
-	siteBrand: 'Digital Health Guide',
+	siteBrand: 'Canllaw Iechyd Digidol',
 	skipToMain: 'Neidio i’r prif gynnwys',
 	siteHeader: 'Pennawd y wefan',
 	mainNav: 'Prif lywio',
@@ -339,7 +339,7 @@ const hi = {
 };
 
 const de = {
-	siteBrand: 'Digital Health Guide',
+	siteBrand: 'Leitfaden Digitale Gesundheit',
 	skipToMain: 'Zum Hauptinhalt springen',
 	siteHeader: 'Kopfbereich der Website',
 	mainNav: 'Hauptnavigation',
@@ -386,7 +386,7 @@ const de = {
 };
 
 const ja = {
-	siteBrand: 'Digital Health Guide',
+	siteBrand: 'デジタルヘルスガイド',
 	skipToMain: 'メインコンテンツへスキップ',
 	siteHeader: 'サイトヘッダー',
 	mainNav: 'メインナビゲーション',

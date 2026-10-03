@@ -13,7 +13,7 @@
 		return PREFIXED_LOCALE_SLUGS.has(first) ? first : DEFAULT_LOCALE;
 	});
 	const t = $derived(stringsFor(locale));
-	const home = $derived(locale === DEFAULT_LOCALE ? '/' : `/${locale}/`);
+	const home = $derived(`/${locale}/`);
 	const heading = $derived(page.status === 404 ? t.notFoundHeading : t.errorHeading);
 </script>
 

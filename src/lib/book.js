@@ -72,9 +72,8 @@ function chapterHrefFor(locale) {
  *
  * With no argument: every route, across every locale — for the sitemap.
  * With a locale: that locale's own chapters and home page; the default
- * locale's list also includes the shared, unlocalized reference material
- * (glossary, index, style guide, spec), since those are only ever served
- * unprefixed and so belong to exactly one prerender pass.
+ * locale's list leaves out the shared, unlocalized reference material
+ * (glossary, index, style guide, spec); see sharedRoutes().
  */
 export function routes(locale) {
 	const all = Object.keys(sources)
@@ -85,15 +84,17 @@ export function routes(locale) {
 		// spec/README.md is a byte-for-byte copy of spec/index.md in the book.
 		.filter((entry) => entry.file !== 'spec/README.md');
 	if (!locale) return all;
-	return all.filter(
-		(entry) => entry.locale === locale || (locale === DEFAULT_LOCALE && entry.locale === null)
-	);
+	return all.filter((entry) => entry.locale === locale);
+}
+
+/** Shared, unlocalized reference pages, served unprefixed. */
+export function sharedRoutes() {
+	return routes().filter((entry) => entry.locale === null);
 }
 
 /** The locale a route belongs to: the leading `/<slug>/…` segment, or the default locale. */
 function localeForRoute(route) {
 	for (const { slug } of LOCALES) {
-		if (slug === DEFAULT_LOCALE) continue;
 		const prefix = localePrefix(slug);
 		if (route === `${prefix}/` || route.startsWith(`${prefix}/`)) return slug;
 	}

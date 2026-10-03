@@ -1,4 +1,4 @@
-# Digital Health Guide
+# Leitfaden Digitale Gesundheit
 
 ### Ein praxisnahes Handbuch bewährter Praktiken für die Erbringung digitaler Services in Organisationen des Gesundheits- und Sozialwesens
 

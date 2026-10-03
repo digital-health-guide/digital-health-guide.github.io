@@ -62,7 +62,7 @@ for (const file of walk(BUILD)) {
 }
 
 const locales = new Set(pages.map((p) => p.locale).filter(Boolean));
-// argv[3]: a locale slug to index, or 'none' when the unprefixed pages are the default locale.
+// argv[3]: the locale slug to index (shared unprefixed pages are always included), or 'none' for no locale.
 const defaultLocale =
 	process.argv[3] === 'none' ? null : (process.argv[3] ?? DEFAULTS.find((l) => locales.has(l)) ?? null);
 const entries = pages

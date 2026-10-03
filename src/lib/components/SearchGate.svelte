@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 	import { targetFromSearch, search } from '#lib/search.js';
+	import { DEFAULT_LOCALE, localePrefix } from '#lib/locales.js';
 
 	let { children } = $props();
 
@@ -12,7 +13,9 @@
 	/** @type {Promise<any[]> | null} */
 	let indexPromise = null;
 
-	const onHome = $derived(page.url.pathname === '/');
+	// Search covers the default locale's pages, so it lives on that home page.
+	const home = `${localePrefix(DEFAULT_LOCALE)}/`;
+	const onHome = $derived(page.url.pathname === home);
 
 	// Client-only: the home page is prerendered, so the query is read here.
 	$effect(() => {
@@ -45,7 +48,7 @@
 	function submit(event) {
 		event.preventDefault();
 		const q = input.trim();
-		goto(q ? `/?${encodeURIComponent(q).replace(/%20/g, '+')}` : '/');
+		goto(q ? `${home}?${encodeURIComponent(q).replace(/%20/g, '+')}` : home);
 	}
 </script>
 
@@ -65,7 +68,7 @@
 		{:else if results === null}
 			<p>Searching…</p>
 		{:else if results.length === 0}
-			<p>No results for “{target}”. <a href="/">Back to the home page</a></p>
+			<p>No results for “{target}”. <a href={home}>Back to the home page</a></p>
 		{:else}
 			<p>{results.length}{results.length === 50 ? '+' : ''} result{results.length === 1 ? '' : 's'}</p>
 			<ol>

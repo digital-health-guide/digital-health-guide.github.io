@@ -2,9 +2,9 @@
 // (bin/sync-content.mjs) and the site's routing/UI. Keep in sync with
 // ../digital-health-guide/locales/*.
 //
-// `en-gb` is the default locale: it is the book's source of truth, and it is
-// served unprefixed (`/`, `/chapters/…/`) to keep the site's existing URLs
-// working. Every other locale is served under `/<slug>/`.
+// `en-gb` is the default locale: it is the book's source of truth. Every
+// locale, the default included, is served under `/<slug>/`. The old unprefixed
+// URLs (`/`, `/chapters/…`) redirect to the `/en-gb/` equivalents.
 
 /** @type {{ slug: string, label: string, hreflang: string }[]} */
 // Sorted alphabetically by slug (ar-001, bn-001, cy-001, de-de, en-001, en-gb,
@@ -33,10 +33,8 @@ export const DEFAULT_LOCALE = 'en-gb';
 /** @type {Set<string>} */
 export const LOCALE_SLUGS = new Set(LOCALES.map((l) => l.slug));
 
-/** @type {Set<string>} Locales served under a `/<slug>/` prefix (everything but the default). */
-export const PREFIXED_LOCALE_SLUGS = new Set(
-	LOCALES.filter((l) => l.slug !== DEFAULT_LOCALE).map((l) => l.slug)
-);
+/** @type {Set<string>} Locales served under a `/<slug>/` prefix (all of them). */
+export const PREFIXED_LOCALE_SLUGS = LOCALE_SLUGS;
 
 /** @type {Record<string, string>} slug -> display label, for LocalePicker's `localeLabels`. */
 export const LOCALE_LABELS = Object.fromEntries(LOCALES.map((l) => [l.slug, l.label]));
@@ -44,9 +42,9 @@ export const LOCALE_LABELS = Object.fromEntries(LOCALES.map((l) => [l.slug, l.la
 /** @type {Record<string, string>} slug -> BCP 47 tag, for `hreflang` alternate links. */
 export const HREFLANG_BY_SLUG = Object.fromEntries(LOCALES.map((l) => [l.slug, l.hreflang]));
 
-/** Site path prefix for a locale: '' for the default locale, '/<slug>' otherwise. */
+/** Site path prefix for a locale: '/<slug>'. */
 export function localePrefix(slug) {
-	return slug === DEFAULT_LOCALE ? '' : `/${slug}`;
+	return `/${slug}`;
 }
 
 /**
