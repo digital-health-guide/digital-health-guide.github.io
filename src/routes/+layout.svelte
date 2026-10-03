@@ -85,8 +85,11 @@
 <Footer label={t.siteFooter} class="site-footer">
 	<div class="site-footer-inner">
 		<p>
-			<em>{t.siteBrand}</em> — {t.footerDescription}
-			<a href="https://github.com/LilyDesignSystem">{t.footerLilyLink}</a>.
+			<em>{t.siteBrand}</em> — {t.footerDescription}{t.footerLedByBefore}<a
+				href="https://linkedin.com/in/joelparkerhenderson">Joel Parker Henderson</a
+			>{t.footerLedByAfter}{t.footerBuiltWith}<a href="https://github.com/LilyDesignSystem"
+				>{t.footerLilyLink}</a
+			>.
 		</p>
 		<div class="site-footer-links">
 			<a href={REPOSITORY}>{t.footerGitHub}</a>
