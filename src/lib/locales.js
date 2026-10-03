@@ -41,6 +41,15 @@ export const RETIRED_LOCALES = {
 /** @type {Set<string>} */
 export const LOCALE_SLUGS = new Set(LOCALES.map((l) => l.slug));
 
+/**
+ * @type {Record<string, string>} Two-letter language aliases for the world
+ * locales (`en` -> `en-001`). `/<alias>/…` renders the same page as
+ * `/<slug>/…`, with the `/<slug>/…` URL as its canonical.
+ */
+export const LOCALE_ALIASES = Object.fromEntries(
+	LOCALES.filter((l) => l.slug.endsWith('-001')).map((l) => [l.slug.slice(0, 2), l.slug])
+);
+
 /** @type {Set<string>} Locales served under a `/<slug>/` prefix (all of them). */
 export const PREFIXED_LOCALE_SLUGS = LOCALE_SLUGS;
 

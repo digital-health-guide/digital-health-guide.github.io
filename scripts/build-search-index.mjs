@@ -55,6 +55,9 @@ for (const file of walk(BUILD)) {
 	const html = readFileSync(file, 'utf8');
 	if (/<meta[^>]+http-equiv=["']refresh/i.test(html)) continue;
 	if (/<meta[^>]+name=["']robots["'][^>]+noindex/i.test(html)) continue;
+	// An alias or redirect page names its real URL as canonical; index only that one.
+	const canonical = (html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i) ?? [])[1];
+	if (canonical && new URL(canonical, 'https://x').pathname !== url) continue;
 	const title = strip((html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) ?? [])[1] ?? '');
 	const main = (html.match(/<main\b[\s\S]*?<\/main>/i) ?? html.match(/<body\b[\s\S]*<\/body>/i) ?? [''])[0];
 	const headings = [...main.matchAll(/<h[1-4]\b[^>]*>([\s\S]*?)<\/h[1-4]>/gi)].map((m) => strip(m[1])).filter(Boolean);
