@@ -1,6 +1,5 @@
-// The unprefixed home page is the old URL of the default locale. It is a page
-// rather than a redirect() so that the script below can carry the query string
-// (old search links look like `/?<target>`) over to /en-gb/.
+// `/` is a page, not a redirect(): `/?<target>` is a search, and a server-side
+// redirect would drop the query. The page redirects on the client instead.
 export function load() {
 	return {};
 }

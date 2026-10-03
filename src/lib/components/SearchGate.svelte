@@ -13,9 +13,10 @@
 	/** @type {Promise<any[]> | null} */
 	let indexPromise = null;
 
-	// Search covers the default locale's pages, so it lives on that home page.
+	// Search lives at `/?<target>`; the form is on that page and on the default
+	// locale's home page. Results replace the page body wherever a query is present.
 	const home = `${localePrefix(DEFAULT_LOCALE)}/`;
-	const onHome = $derived(page.url.pathname === home);
+	const onHome = $derived(page.url.pathname === '/' || page.url.pathname === home);
 
 	// Client-only: the home page is prerendered, so the query is read here.
 	$effect(() => {
@@ -48,7 +49,7 @@
 	function submit(event) {
 		event.preventDefault();
 		const q = input.trim();
-		goto(q ? `${home}?${encodeURIComponent(q).replace(/%20/g, '+')}` : home);
+		goto(q ? `/?${encodeURIComponent(q).replace(/%20/g, '+')}` : home);
 	}
 </script>
 
