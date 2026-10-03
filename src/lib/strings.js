@@ -6,8 +6,8 @@
 //
 // The four English locales (en-gb, en-us, en-gb-oxendict, en-001) share one
 // table: none of these short UI strings has a US/UK/Oxford spelling
-// difference. Arabic (ar-001), Welsh (cy-001), German (de-de), Japanese (ja-jp), Chinese (zh-cn), Spanish
-// (es-001), French (fr-001), Hindi (hi-in), Bengali (bn-001), and Russian (ru-001) each need their own.
+// difference. Arabic (ar-001), Welsh (cy-001), German (de-001), Japanese (ja-001), Chinese (zh-001), Spanish
+// (es-001), French (fr-001), Hindi (hi-001), Bengali (bn-001), and Russian (ru-001) each need their own.
 
 const en = {
 	siteBrand: 'Digital Health Guide',
@@ -534,12 +534,12 @@ const TABLES = {
 	'en-001': en,
 	'ar-001': ar,
 	'cy-001': cyGb,
-	'de-de': de,
-	'ja-jp': ja,
-	'zh-cn': zhCn,
+	'de-001': de,
+	'ja-001': ja,
+	'zh-001': zhCn,
 	'es-001': es,
 	'fr-001': fr,
-	'hi-in': hi,
+	'hi-001': hi,
 	'bn-001': bn,
 	'ru-001': ru
 };
