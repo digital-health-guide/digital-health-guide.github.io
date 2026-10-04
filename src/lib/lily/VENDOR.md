@@ -5,10 +5,10 @@ These files are copied verbatim from the Lily Design System (MIT licence) by
 `npm run sync:lily`.
 
 - Source: <https://github.com/LilyDesignSystem>
-- Commit: `21e5d0065d3fac0587defa3ccf39204554f3e209`
+- Commit: `ba711d8252b8d35d48f3c67e97e419463a464b91`
 - Components: SkipLink, Header, Footer, ArticleLayout, ContentsNav, ContentsList, ContentsListItem, BreadcrumbNav, BreadcrumbList, BreadcrumbListItem, PaginationNav, PaginationList, PaginationListItem, IconButton, Listbox
 - Helper packages (each in its own `helpers/<name>/`, verbatim including its
-  real `index.ts` barrel): theme-picker, locale-picker, text-size-picker, share-picker, picker-bar
+  real `index.ts` barrel): theme-picker, locale-picker, text-size-picker, search-picker, share-picker, picker-bar
 - `picker-bar`'s own source imports its four wrapped pickers, and each of
   those imports `IconButton`/`Listbox` from `@lilydesignsystem/svelte-headless`,
   as real package specifiers, unmodified — see the matching aliases in

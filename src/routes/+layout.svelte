@@ -59,7 +59,10 @@
 					theme: t.pickerTheme,
 					locale: t.pickerLocale,
 					textSize: t.pickerTextSize,
-					share: t.pickerShare
+					share: t.pickerShare,
+					search: t.pickerSearch,
+					searchInput: t.pickerSearchInput,
+					searchSubmit: t.pickerSearchSubmit
 				}}
 				themesUrl="/themes/"
 				themes={THEMES}

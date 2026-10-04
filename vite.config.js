@@ -33,7 +33,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			// PickerBar.svelte (vendored verbatim in src/lib/lily/helpers/picker-bar/)
-			// imports its four wrapped pickers as real npm package specifiers, since
+			// imports its five wrapped pickers as real npm package specifiers, since
 			// that is how the real @lilydesignsystem/svelte-picker-bar package is
 			// built. This site vendors from the sibling Lily checkout rather than
 			// installing those packages for real (see src/lib/lily/VENDOR.md), so
@@ -41,8 +41,9 @@ export default defineConfig({
 			'@lilydesignsystem/svelte-theme-picker': helper('theme-picker'),
 			'@lilydesignsystem/svelte-locale-picker': helper('locale-picker'),
 			'@lilydesignsystem/svelte-text-size-picker': helper('text-size-picker'),
+			'@lilydesignsystem/svelte-search-picker': helper('search-picker'),
 			'@lilydesignsystem/svelte-share-picker': helper('share-picker'),
-			// theme-picker/locale-picker/text-size-picker/share-picker each import
+			// theme-picker/locale-picker/text-size-picker/share-picker/search-picker each import
 			// IconButton/Listbox from this package too.
 			'@lilydesignsystem/svelte-headless': resolve(here, 'src/lib/lily/headless-for-helpers.js')
 		}

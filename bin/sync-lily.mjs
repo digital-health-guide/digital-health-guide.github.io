@@ -72,6 +72,7 @@ const helperPackages = [
 		'text-size-picker',
 		['TextSizePicker.svelte', 'index.ts']
 	],
+	['lily-design-system-svelte-search-picker', 'search-picker', ['SearchPicker.svelte', 'index.ts']],
 	['lily-design-system-svelte-share-picker', 'share-picker', ['SharePicker.svelte', 'index.ts']],
 	['lily-design-system-svelte-picker-bar', 'picker-bar', ['PickerBar.svelte', 'index.ts']]
 ];
