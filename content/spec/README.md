@@ -1,1 +1,0 @@
-/Users/jph/git/digital-health-guide/digital-health-guide/spec/index.md

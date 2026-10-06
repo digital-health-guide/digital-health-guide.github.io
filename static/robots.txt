@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://digital-health-guide.github.io/sitemap.xml

@@ -1,9 +1,0 @@
-export {
-    default,
-    default as ThemePicker,
-    normaliseThemesUrl,
-    themeHref,
-    themeName,
-    matchSystemTheme,
-} from "./ThemePicker.svelte";
-export type { Props, ChildArgs } from "./ThemePicker.svelte";
