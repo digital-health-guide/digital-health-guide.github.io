@@ -1,0 +1,136 @@
+# Digital Health Guide
+
+> A practical handbook of best practices for delivering digital services in health and social care organizations, published in fifteen locales.
+
+The book is the source of truth; every page is plain prerendered HTML. Each topic is also Markdown in the repository.
+
+## Site
+
+- [Home](https://digital-health-guide.github.io/): redirects to the en-gb edition
+- [Sitemap](https://digital-health-guide.github.io/sitemap.xml)
+- [Search index](https://digital-health-guide.github.io/search-index.json)
+- [Glossary](https://digital-health-guide.github.io/glossary/)
+- [Subject index](https://digital-health-guide.github.io/subject-index/)
+- [Style guide](https://digital-health-guide.github.io/style-guide/)
+- [Specification](https://digital-health-guide.github.io/spec/)
+- [Source repository](https://github.com/digital-health-guide/digital-health-guide)
+
+## 1 Foundations
+
+- [1.0 Ways of Working in Digital Health & Care](https://digital-health-guide.github.io/en-gb/topics/01-00-introduction/)
+- [1.1 The Operating Model](https://digital-health-guide.github.io/en-gb/topics/01-01-operating-model/)
+- [1.2 Digital Strategy & Roadmapping](https://digital-health-guide.github.io/en-gb/topics/01-02-digital-strategy-roadmapping/)
+- [1.3 Evidence-Driven Decisions](https://digital-health-guide.github.io/en-gb/topics/01-03-evidence-driven-decisions/)
+- [1.4 Hazard Ratios](https://digital-health-guide.github.io/en-gb/topics/01-04-hazard-ratios/)
+- [1.5 Regulation & Compliance Landscape](https://digital-health-guide.github.io/en-gb/topics/01-05-regulation-compliance/)
+- [1.6 Clinical Safety & Risk Management](https://digital-health-guide.github.io/en-gb/topics/01-06-clinical-safety/)
+- [1.7 Information Governance, Data Protection & Cyber Security](https://digital-health-guide.github.io/en-gb/topics/01-07-information-governance-cyber/)
+- [1.8 Data Ethics, Consent & Public Trust](https://digital-health-guide.github.io/en-gb/topics/01-08-data-ethics-consent-trust/)
+- [1.9 Digital Inclusion & Accessibility](https://digital-health-guide.github.io/en-gb/topics/01-09-digital-inclusion-accessibility/)
+- [1.10 Safeguarding in Digital Services](https://digital-health-guide.github.io/en-gb/topics/01-10-safeguarding-digital-services/)
+
+## 2 Managing the Flow of Work
+
+- [2.0 Work Intake](https://digital-health-guide.github.io/en-gb/topics/02-00-work-intake/)
+- [2.1 Work Triage](https://digital-health-guide.github.io/en-gb/topics/02-01-work-triage/)
+- [2.2 Work Prioritization](https://digital-health-guide.github.io/en-gb/topics/02-02-work-prioritization/)
+
+## 3 The Delivery Lifecycle
+
+- [3.0 User Research & Service Design](https://digital-health-guide.github.io/en-gb/topics/03-00-user-research-service-design/)
+- [3.1 Content Design & Health Literacy](https://digital-health-guide.github.io/en-gb/topics/03-01-content-design-health-literacy/)
+- [3.2 Design Systems & Prototyping](https://digital-health-guide.github.io/en-gb/topics/03-02-design-systems-prototyping/)
+- [3.3 Patient & Citizen-Facing Digital Services](https://digital-health-guide.github.io/en-gb/topics/03-03-patient-citizen-facing-services/)
+- [3.4 Discovery Phases](https://digital-health-guide.github.io/en-gb/topics/03-04-discovery-phases/)
+- [3.5 Delivery Lifecycles](https://digital-health-guide.github.io/en-gb/topics/03-05-delivery-lifecycles/)
+- [3.6 DevOps & Engineering Excellence](https://digital-health-guide.github.io/en-gb/topics/03-06-devops-engineering-excellence/)
+- [3.7 Testing & Quality Assurance](https://digital-health-guide.github.io/en-gb/topics/03-07-testing-quality-assurance/)
+- [3.8 Service Management & Live Operations](https://digital-health-guide.github.io/en-gb/topics/03-08-service-management-operations/)
+- [3.9 Business Continuity & Disaster Recovery](https://digital-health-guide.github.io/en-gb/topics/03-09-business-continuity-disaster-recovery/)
+- [3.10 Emergency Preparedness, Resilience & Response](https://digital-health-guide.github.io/en-gb/topics/03-10-emergency-preparedness-response/)
+- [3.11 Telehealth, Remote Consultation & Virtual Wards](https://digital-health-guide.github.io/en-gb/topics/03-11-telehealth-virtual-wards/)
+
+## 4 Technology, Architecture & Data
+
+- [4.0 Technical Architecture, Cloud & Legacy](https://digital-health-guide.github.io/en-gb/topics/04-00-technical-architecture-cloud-legacy/)
+- [4.1 Platforms & Shared Services](https://digital-health-guide.github.io/en-gb/topics/04-01-platforms-shared-services/)
+- [4.2 Identity & Access Management](https://digital-health-guide.github.io/en-gb/topics/04-02-identity-access-management/)
+- [4.3 Interoperability & Data Standards](https://digital-health-guide.github.io/en-gb/topics/04-03-interoperability-data-standards/)
+- [4.4 Connected Devices, IoT & Clinical Engineering](https://digital-health-guide.github.io/en-gb/topics/04-04-connected-devices-iot/)
+- [4.5 Data, Analytics & Population Health Management](https://digital-health-guide.github.io/en-gb/topics/04-05-data-analytics-population-health/)
+- [4.6 Electronic Patient Records & Clinical Systems](https://digital-health-guide.github.io/en-gb/topics/04-06-electronic-patient-records/)
+- [4.7 Clinical Decision Support & Clinical Informatics](https://digital-health-guide.github.io/en-gb/topics/04-07-clinical-decision-support/)
+- [4.8 Electronic Prescribing & Medicines Management](https://digital-health-guide.github.io/en-gb/topics/04-08-electronic-prescribing-medicines/)
+- [4.9 Data Quality & Master Data Management](https://digital-health-guide.github.io/en-gb/topics/04-09-data-quality-mdm/)
+- [4.10 Secure Data Environments & Research Data Access](https://digital-health-guide.github.io/en-gb/topics/04-10-secure-data-environments/)
+- [4.11 Genomics & Precision-Medicine Data](https://digital-health-guide.github.io/en-gb/topics/04-11-genomics-precision-medicine/)
+
+## 5 Modes of Delivery
+
+- [5.0 Product-Led Work](https://digital-health-guide.github.io/en-gb/topics/05-00-product-led-work/)
+- [5.1 Project-Led Work](https://digital-health-guide.github.io/en-gb/topics/05-01-project-led-work/)
+- [5.2 Programme-Led Work](https://digital-health-guide.github.io/en-gb/topics/05-02-programme-led-work/)
+- [5.3 Enterprise Project Portfolio Management (EPPM)](https://digital-health-guide.github.io/en-gb/topics/05-03-eppm/)
+- [5.4 Enterprise Resource Planning (ERP)](https://digital-health-guide.github.io/en-gb/topics/05-04-erp/)
+
+## 6 Money, Value & Governance
+
+- [6.0 Financial Management & Business Cases](https://digital-health-guide.github.io/en-gb/topics/06-00-financial-management-business-cases/)
+- [6.1 Health Economics](https://digital-health-guide.github.io/en-gb/topics/06-01-health-economics/)
+- [6.2 Benefits Realization & Value Management](https://digital-health-guide.github.io/en-gb/topics/06-02-benefits-realization-value/)
+- [6.3 Procurement & Commercial](https://digital-health-guide.github.io/en-gb/topics/06-03-procurement-commercial/)
+- [6.4 Governance & Assurance](https://digital-health-guide.github.io/en-gb/topics/06-04-governance-assurance/)
+- [6.5 Technology Cost Management & Cloud FinOps](https://digital-health-guide.github.io/en-gb/topics/06-05-technology-cost-finops/)
+- [6.6 Vendor & Service Integration Management (SIAM)](https://digital-health-guide.github.io/en-gb/topics/06-06-vendor-siam/)
+
+## 7 People, Teams & Workforce
+
+- [7.0 Team Structures, Roles & Responsibilities](https://digital-health-guide.github.io/en-gb/topics/07-00-team-structures-roles/)
+- [7.1 Agile Delivery Practices & Team Health](https://digital-health-guide.github.io/en-gb/topics/07-01-agile-delivery-team-health/)
+- [7.2 Workforce Planning](https://digital-health-guide.github.io/en-gb/topics/07-02-workforce-planning/)
+- [7.3 Workforce Strategy](https://digital-health-guide.github.io/en-gb/topics/07-03-workforce-strategy/)
+- [7.4 Digital Skills & Capability Building](https://digital-health-guide.github.io/en-gb/topics/07-04-digital-skills-capability/)
+- [7.5 People & Organizational Development](https://digital-health-guide.github.io/en-gb/topics/07-05-people-org-development/)
+- [7.6 Workforce Equality, Diversity & Inclusion](https://digital-health-guide.github.io/en-gb/topics/07-06-workforce-edi/)
+
+## 8 Change & Innovation
+
+- [8.0 Phasing in Innovation](https://digital-health-guide.github.io/en-gb/topics/08-00-phasing-innovation/)
+- [8.1 Change Management](https://digital-health-guide.github.io/en-gb/topics/08-01-change-management/)
+- [8.2 Communications & Engagement](https://digital-health-guide.github.io/en-gb/topics/08-02-communications-engagement/)
+- [8.3 Behavioural Science & Adoption](https://digital-health-guide.github.io/en-gb/topics/08-03-behavioural-science-adoption/)
+- [8.4 AI & Emerging Technology Governance](https://digital-health-guide.github.io/en-gb/topics/08-04-ai-emerging-technology/)
+- [8.5 Sustainability & Net Zero](https://digital-health-guide.github.io/en-gb/topics/08-05-sustainability-net-zero/)
+- [8.6 Research & Real-World Evaluation](https://digital-health-guide.github.io/en-gb/topics/08-06-research-real-world-evaluation/)
+
+## 9 Partnerships & Government
+
+- [9.0 Collaborating with Partner Organizations](https://digital-health-guide.github.io/en-gb/topics/09-00-collaborating-partner-organizations/)
+- [9.1 Working with Local & National Governments](https://digital-health-guide.github.io/en-gb/topics/09-01-working-with-governments/)
+- [9.2 Global & International Digital Health](https://digital-health-guide.github.io/en-gb/topics/09-02-global-international-digital-health/)
+- [9.3 Digital in Adult Social Care](https://digital-health-guide.github.io/en-gb/topics/09-03-digital-adult-social-care/)
+
+## 10 Measurement, Improvement, Knowledge & Leadership
+
+- [10.0 Objectives & Key Results (OKRs)](https://digital-health-guide.github.io/en-gb/topics/10-00-okrs/)
+- [10.1 Key Performance Indicators (KPIs)](https://digital-health-guide.github.io/en-gb/topics/10-01-kpis/)
+- [10.2 Quality Improvement & Improvement Science](https://digital-health-guide.github.io/en-gb/topics/10-02-quality-improvement/)
+- [10.3 Knowledge Management & Documentation](https://digital-health-guide.github.io/en-gb/topics/10-03-knowledge-management/)
+- [10.4 Visibility for the CEO & Senior Leaders](https://digital-health-guide.github.io/en-gb/topics/10-04-leadership-visibility/)
+
+## Optional: other locales
+
+- [العربية (ar-001)](https://digital-health-guide.github.io/ar-001/)
+- [বাংলা (bn-001)](https://digital-health-guide.github.io/bn-001/)
+- [Cymraeg (cy-001)](https://digital-health-guide.github.io/cy-001/)
+- [Cymraeg - Prydain Fawr (cy-gb)](https://digital-health-guide.github.io/cy-gb/)
+- [Deutsch (de-001)](https://digital-health-guide.github.io/de-001/)
+- [English (en-001)](https://digital-health-guide.github.io/en-001/)
+- [English - Great Britain - Oxford (en-gb-oxendict)](https://digital-health-guide.github.io/en-gb-oxendict/)
+- [English - United States (en-us)](https://digital-health-guide.github.io/en-us/)
+- [Español (es-001)](https://digital-health-guide.github.io/es-001/)
+- [Français (fr-001)](https://digital-health-guide.github.io/fr-001/)
+- [हिन्दी (hi-001)](https://digital-health-guide.github.io/hi-001/)
+- [日本語 (ja-001)](https://digital-health-guide.github.io/ja-001/)
+- [Русский (ru-001)](https://digital-health-guide.github.io/ru-001/)
+- [中文 (zh-001)](https://digital-health-guide.github.io/zh-001/)
