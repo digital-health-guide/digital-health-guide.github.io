@@ -12,7 +12,7 @@
   document.head.appendChild(st);
 
   function clamp() {
-    var list = document.querySelectorAll('ul[class*="-picker-list"], [class*="-picker"] .listbox');
+    var list = document.querySelectorAll('ul[class*="-picker-list"], [class*="-picker"] .listbox, .search-picker-panel');
     for (var i = 0; i < list.length; i++) {
       var p = list[i];
       if (p.hidden || !p.getClientRects().length) { p.style.translate = ''; continue; }
