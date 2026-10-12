@@ -20,7 +20,7 @@
 	const html = $derived.by(() => {
 		const label = HERO[doc.locale]?.translations ?? HERO['en-001'].translations;
 		const links = [...LOCALE_SLUGS]
-			.filter((slug) => slug in ENDONYMS)
+			.filter((slug) => slug.endsWith('-001') && slug in ENDONYMS)
 			.map(
 				(slug) =>
 					`<a href="/${slug}/"${slug === doc.locale ? ' aria-current="page"' : ''}>${esc(ENDONYMS[slug])}</a>`
