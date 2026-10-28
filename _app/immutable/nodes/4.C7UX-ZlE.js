@@ -1,0 +1,1 @@
+import{K as e,q as t}from"../chunks/DEZkA1sh.js";import{t as n}from"../chunks/OMUqYFVG.js";function r(r,i){t(i,!0),n(r,{get doc(){return i.data.doc},get alternates(){return i.data.alternates}}),e()}export{r as component};
